@@ -1,0 +1,12 @@
+import { Options } from '../utils/types';
+declare const rotateIn: (target: any, done: (() => void), options: Options) => Promise<void>;
+declare const rotateInBottomLeft: (target: any, done: (() => void), options: Options) => Promise<void>;
+declare const rotateInBottomRight: (target: any, done: (() => void), options: Options) => Promise<void>;
+declare const rotateInTopLeft: (target: any, done: (() => void), options: Options) => Promise<void>;
+declare const rotateInTopRight: (target: any, done: (() => void), options: Options) => Promise<void>;
+declare const rotateOut: (target: any, done: (() => void), options: Options) => Promise<void>;
+declare const rotateOutBottomLeft: (target: any, done: (() => void), options: Options) => Promise<void>;
+declare const rotateOutBottomRight: (target: any, done: (() => void), options: Options) => Promise<void>;
+declare const rotateOutTopLeft: (target: any, done: (() => void), options: Options) => Promise<void>;
+declare const rotateOutTopRight: (target: any, done: (() => void), options: Options) => Promise<void>;
+export { rotateIn, rotateInBottomLeft, rotateInBottomRight, rotateInTopLeft, rotateInTopRight, rotateOut, rotateOutBottomLeft, rotateOutBottomRight, rotateOutTopLeft, rotateOutTopRight };
