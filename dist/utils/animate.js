@@ -8,7 +8,7 @@ var animate = function (direction, target, done, options, properties) {
         try {
             // Default animation settings
             var defOptions = {
-                duration: 0.3, // Duration of the animation in seconds
+                duration: 0.5, // Duration of the animation in seconds
                 opacity: 0, // Initial opacity value
                 //display: 'none' // Element on hide at initial/end state
                 delay: 0, // Start the animation immediatey by default
@@ -32,7 +32,9 @@ var animate = function (direction, target, done, options, properties) {
                 return;
             }
             var fadeOption = options.fade || data.vnFade;
+            // This func maps a custom easing name to a GSAP easing value.
             var setEase = function (selectedEase) {
+                // Define a mapping from custom easing names to GSAP easing values
                 var easings = {
                     linear: "none",
                     ease: "power1.inOut",
@@ -48,13 +50,16 @@ var animate = function (direction, target, done, options, properties) {
                     elasticIn: "elastic.in",
                     elasticOut: "elastic.out"
                 };
+                // If no easing option is specified, default to 'ease'
                 if (selectedEase === undefined) {
                     return easings.ease;
                 }
+                // If specifid easing exists represent with actual gsap value then return
                 if (selectedEase in easings) {
                     return easings[selectedEase];
                 }
                 else {
+                    // Log an error if the easing option is invalid and return the default 'ease' value
                     console.error("Vuenimate: Invalid ease:".concat(selectedEase, ". Accepts: ").concat(Object.keys(easings).join(', ')));
                     return easings.ease;
                 }

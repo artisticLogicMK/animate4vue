@@ -16,7 +16,7 @@ const animate = (
       
       // Default animation settings
       const defOptions = {
-        duration: 0.3,  // Duration of the animation in seconds
+        duration: 0.5,  // Duration of the animation in seconds
         opacity: 0, // Initial opacity value
         //display: 'none' // Element on hide at initial/end state
         delay: 0, // Start the animation immediatey by default

@@ -1,0 +1,10 @@
+import { Options } from '../utils/types';
+declare const perspectiveInRight: (target: any, done: (() => void), options: Options) => Promise<void>;
+declare const perspectiveInLeft: (target: any, done: (() => void), options: Options) => Promise<void>;
+declare const perspectiveInTop: (target: any, done: (() => void), options: Options) => Promise<void>;
+declare const perspectiveInBottom: (target: any, done: (() => void), options: Options) => Promise<void>;
+declare const perspectiveOutRight: (target: any, done: (() => void), options: Options) => Promise<void>;
+declare const perspectiveOutLeft: (target: any, done: (() => void), options: Options) => Promise<void>;
+declare const perspectiveOutTop: (target: any, done: (() => void), options: Options) => Promise<void>;
+declare const perspectiveOutBottom: (target: any, done: (() => void), options: Options) => Promise<void>;
+export { perspectiveInRight, perspectiveInLeft, perspectiveInTop, perspectiveInBottom, perspectiveOutRight, perspectiveOutLeft, perspectiveOutTop, perspectiveOutBottom };

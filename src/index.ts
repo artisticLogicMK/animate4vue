@@ -6,6 +6,11 @@ import { flipInHorizontal, flipOutHorizontal, flipInVertical, flipOutVertical, f
 import { zoomIn, zoomInRight, zoomInLeft, zoomInTop, zoomInBottom, zoomInTopRight, zoomInTopLeft, zoomInBottomRight, zoomInBottomLeft, zoomOut, zoomOutRight, zoomOutLeft, zoomOutTop, zoomOutBottom, zoomOutTopRight, zoomOutTopLeft, zoomOutBottomRight, zoomOutBottomLeft } from './animations/zoom'
 import { rotateIn, rotateInBottomLeft, rotateInBottomRight, rotateInTopLeft, rotateInTopRight, rotateOut, rotateOutBottomLeft, rotateOutBottomRight, rotateOutTopLeft, rotateOutTopRight } from './animations/rotate'
 import { skewInRight, skewInLeft, skewOutRight, skewOutLeft } from './animations/skew'
+import { rollIn, rollOut } from './animations/roll'
+import { puffIn, puffOut } from './animations/puff'
+import { vanishIn, vanishOut } from './animations/vanish'
+import { perspectiveInRight, perspectiveInLeft, perspectiveInTop, perspectiveInBottom, perspectiveOutRight, perspectiveOutLeft, perspectiveOutTop, perspectiveOutBottom } from './animations/perspective'
+import { OpenTopLeft, OpenTopRight, OpenBottomLeft, OpenBottomRight, closeTopLeft, closeTopRight, closeBottomLeft, closeBottomRight } from './animations/openClose'
 
 export {
   // Fade animations
@@ -30,5 +35,20 @@ export {
   rotateIn, rotateInBottomLeft, rotateInBottomRight, rotateInTopLeft, rotateInTopRight, rotateOut, rotateOutBottomLeft, rotateOutBottomRight, rotateOutTopLeft, rotateOutTopRight,
   
   // skew
-  skewInRight, skewInLeft, skewOutRight, skewOutLeft
+  skewInRight, skewInLeft, skewOutRight, skewOutLeft,
+  
+  // Roll
+  rollIn, rollOut,
+  
+  // Puff
+  puffIn, puffOut,
+  
+  // Vanish
+  vanishIn, vanishOut,
+  
+  // Perspective
+  perspectiveInRight, perspectiveInLeft, perspectiveInTop, perspectiveInBottom, perspectiveOutRight, perspectiveOutLeft, perspectiveOutTop, perspectiveOutBottom
+  
+  // Open and close
+  OpenTopLeft, OpenTopRight, OpenBottomLeft, OpenBottomRight, closeTopLeft, closeTopRight, closeBottomLeft, closeBottomRight
 }
