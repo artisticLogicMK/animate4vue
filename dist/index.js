@@ -10,6 +10,7 @@ import { rollIn, rollOut } from './animations/roll';
 import { puffIn, puffOut } from './animations/puff';
 import { vanishIn, vanishOut } from './animations/vanish';
 import { perspectiveInRight, perspectiveInLeft, perspectiveInTop, perspectiveInBottom, perspectiveOutRight, perspectiveOutLeft, perspectiveOutTop, perspectiveOutBottom } from './animations/perspective';
+import { openTopLeft, openTopRight, openBottomLeft, openBottomRight, closeTopLeft, closeTopRight, closeBottomLeft, closeBottomRight } from './animations/openClose';
 export { 
 // Fade animations
 fadeIn, fadeOut, 
@@ -34,4 +35,6 @@ puffIn, puffOut,
 // Vanish
 vanishIn, vanishOut, 
 // Perspective
-perspectiveInRight, perspectiveInLeft, perspectiveInTop, perspectiveInBottom, perspectiveOutRight, perspectiveOutLeft, perspectiveOutTop, perspectiveOutBottom };
+perspectiveInRight, perspectiveInLeft, perspectiveInTop, perspectiveInBottom, perspectiveOutRight, perspectiveOutLeft, perspectiveOutTop, perspectiveOutBottom, 
+// open and close
+openTopLeft, openTopRight, openBottomLeft, openBottomRight, closeTopLeft, closeTopRight, closeBottomLeft, closeBottomRight };

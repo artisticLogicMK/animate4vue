@@ -6,7 +6,7 @@ const openOptions = {
 }
 
 // entrance animations
-const OpenTopRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const openTopRight = (target: any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, {
     ...openOptions,
     transformOrigin: "top right",
@@ -14,7 +14,7 @@ const OpenTopRight = (target: any, done: (() => void), options: Options): Promis
   })
 }
 
-const OpenTopLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const openTopLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, {
     ...openOptions,
     transformOrigin: "top left",
@@ -22,7 +22,7 @@ const OpenTopLeft = (target: any, done: (() => void), options: Options): Promise
   })
 }
 
-const OpenBottomRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const openBottomRight = (target: any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, {
     ...openOptions,
     transformOrigin: "bottom right",
@@ -30,7 +30,7 @@ const OpenBottomRight = (target: any, done: (() => void), options: Options): Pro
   })
 }
 
-const OpenBottomLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const openBottomLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, {
     ...openOptions,
     transformOrigin: "bottom left",
@@ -44,7 +44,7 @@ const closeTopRight = (target: any, done: (() => void), options: Options): Promi
   return animate('out', target, done, options, {
     ...openOptions,
     transformOrigin: "top right",
-    rotation: 0,
+    rotation: -110,
   })
 }
 
@@ -52,7 +52,7 @@ const closeTopLeft = (target: any, done: (() => void), options: Options): Promis
   return animate('out', target, done, options, {
     ...openOptions,
     transformOrigin: "top left",
-    rotation: 0,
+    rotation: 110,
   })
 }
 
@@ -60,7 +60,7 @@ const closeBottomRight = (target: any, done: (() => void), options: Options): Pr
   return animate('out', target, done, options, {
     ...openOptions,
     transformOrigin: "bottom right",
-    rotation: 110,
+    rotation: -110,
   })
 }
 
@@ -68,8 +68,8 @@ const closeBottomLeft = (target: any, done: (() => void), options: Options): Pro
   return animate('out', target, done, options, {
     ...openOptions,
     transformOrigin: "bottom left",
-    rotation: -110,
+    rotation: 110,
   })
 }
 
-export { OpenTopLeft, OpenTopRight, OpenBottomLeft, OpenBottomRight, closeTopLeft, closeTopRight, closeBottomLeft, closeBottomRight }
+export { openTopLeft, openTopRight, openBottomLeft, openBottomRight, closeTopLeft, closeTopRight, closeBottomLeft, closeBottomRight }
