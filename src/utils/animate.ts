@@ -40,7 +40,7 @@ const animate = (
       
       // Validate the options object to ensure it contains only allowed properties
       if (!isValidOptions(options)) {
-        console.error('Options object should only include: duration, fade, delay, ease, offset, onStart, and onComplete')
+        console.error('Options object should only include: duration(number), fade(number), delay(number), ease(string), offset(string), onStart(func), and onComplete(func)')
         return
       }
       

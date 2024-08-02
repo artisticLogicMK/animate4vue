@@ -12,6 +12,16 @@ import { vanishIn, vanishOut } from './animations/vanish'
 import { perspectiveInRight, perspectiveInLeft, perspectiveInTop, perspectiveInBottom, perspectiveOutRight, perspectiveOutLeft, perspectiveOutTop, perspectiveOutBottom } from './animations/perspective'
 import { openTopLeft, openTopRight, openBottomLeft, openBottomRight, closeTopLeft, closeTopRight, closeBottomLeft, closeBottomRight } from './animations/openClose'
 
+// Attention seekers
+import { jello } from './animations/attentionSeekers/jello'
+import { bounce } from './animations/attentionSeekers/bounce'
+import { pulse } from './animations/attentionSeekers/pulse'
+import { flash } from './animations/attentionSeekers/flash'
+import { headShake } from './animations/attentionSeekers/headShake'
+import { rubberBand } from './animations/attentionSeekers/rubberBand'
+import { shakeHorizontal } from './animations/attentionSeekers/shakeHorizontal'
+import { shakeVertical } from './animations/attentionSeekers/shakeVertical'
+
 export {
   // Fade animations
   fadeIn, fadeOut,
@@ -50,5 +60,8 @@ export {
   perspectiveInRight, perspectiveInLeft, perspectiveInTop, perspectiveInBottom, perspectiveOutRight, perspectiveOutLeft, perspectiveOutTop, perspectiveOutBottom,
   
   // open and close
-  openTopLeft, openTopRight, openBottomLeft, openBottomRight, closeTopLeft, closeTopRight, closeBottomLeft, closeBottomRight
+  openTopLeft, openTopRight, openBottomLeft, openBottomRight, closeTopLeft, closeTopRight, closeBottomLeft, closeBottomRight,
+  
+  // Attention seekers
+  jello, bounce, pulse, flash, rubberBand, headShake, shakeHorizontal, shakeVertical
 }

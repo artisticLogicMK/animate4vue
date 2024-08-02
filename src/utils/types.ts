@@ -31,3 +31,18 @@ export interface Options {
  * @type ExcludedOptionsKeys
  */
 export type ExcludedOptionsKeys = Exclude<keyof any, keyof Options>
+
+
+/**
+ * Defines configuration options for attention seekers.
+ * 
+ * @interface AttentionOptions
+ */
+export interface AttentionOptions {
+  /** Duration of the animation in seconds. */
+  duration?: number;
+  /** Delay before the animation starts, in seconds. */
+  delay?: number;
+  /** Indicator wether the animation should repeat or not. */
+  loop?: boolean;
+}
