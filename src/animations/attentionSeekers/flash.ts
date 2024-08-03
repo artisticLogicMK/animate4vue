@@ -4,6 +4,8 @@ import { isValidAttOptions } from '../../utils/runtimeChecks'
 
 export function flash(element: any, options: AttentionOptions) {
   
+  options = {...options}
+  
   // Validate l options object to ensure it contains only allowed properties
   if (!isValidAttOptions(options)) {
     console.error('Options object should only include: duration(number), delay(number), loop(boolean)')
@@ -11,7 +13,6 @@ export function flash(element: any, options: AttentionOptions) {
   }
       
   return new ConstructAnimation(element, {
-    duration: options.duration ? options.duration : 1.2,
     keyframes: [
       { opacity: 1, duration: 0.25 },
       { opacity: 0, duration: 0.25 },
@@ -19,7 +20,6 @@ export function flash(element: any, options: AttentionOptions) {
     ],
     repeat: options.loop ? -1 : 0,
     repeatDelay: options.delay ? options.delay : 0.111,
-    yoyo: true,
-    ...options,
+    duration: options.duration ? options.duration : 1.2
   })
 }

@@ -4,6 +4,8 @@ import { isValidAttOptions } from '../../utils/runtimeChecks'
 
 export function shakeHorizontal(element: any, options: AttentionOptions) {
   
+  options = {...options}
+  
   // Validate l options object to ensure it contains only allowed properties
   if (!isValidAttOptions(options)) {
     console.error('Options object should only include: duration(number), delay(number), loop(boolean)')
@@ -11,7 +13,6 @@ export function shakeHorizontal(element: any, options: AttentionOptions) {
   }
       
   return new ConstructAnimation(element, {
-    duration: options.duration ? options.duration : 2,
     keyframes: [
       { x: 0, duration: 0.1 },     // 0%
       { x: -10, duration: 0.1 },   // 10%
@@ -28,7 +29,6 @@ export function shakeHorizontal(element: any, options: AttentionOptions) {
     ease: "power1.inOut",
     repeat: options.loop ? -1 : 0,
     repeatDelay: options.delay ? options.delay : 0.111,
-    yoyo: true,
-    ...options,
+    duration: options.duration ? options.duration : 2
   })
 }

@@ -1,7 +1,7 @@
 import { __assign } from "tslib";
 import ConstructAnimation from './constructAnimation';
 import { isValidAttOptions } from '../../utils/runtimeChecks';
-export function shakeHorizontal(element, options) {
+export function swing(element, options) {
     options = __assign({}, options);
     // Validate l options object to ensure it contains only allowed properties
     if (!isValidAttOptions(options)) {
@@ -9,22 +9,18 @@ export function shakeHorizontal(element, options) {
         return;
     }
     return new ConstructAnimation(element, {
+        rotation: 15,
+        transformOrigin: 'top center',
         keyframes: [
-            { x: 0, duration: 0.1 }, // 0%
-            { x: -10, duration: 0.1 }, // 10%
-            { x: 10, duration: 0.1 }, // 20%
-            { x: -10, duration: 0.1 }, // 30%
-            { x: 10, duration: 0.1 }, // 40%
-            { x: -10, duration: 0.1 }, // 50%
-            { x: 10, duration: 0.1 }, // 60%
-            { x: -10, duration: 0.1 }, // 70%
-            { x: 10, duration: 0.1 }, // 80%
-            { x: -10, duration: 0.1 }, // 90%
-            { x: 0, duration: 0.1 } // 100%
+            { rotation: 15, duration: 0.2 },
+            { rotation: -10, duration: 0.2 },
+            { rotation: 5, duration: 0.2 },
+            { rotation: -5, duration: 0.2 },
+            { rotation: 0, duration: 0.2 }
         ],
         ease: "power1.inOut",
         repeat: options.loop ? -1 : 0,
         repeatDelay: options.delay ? options.delay : 0.111,
-        duration: options.duration ? options.duration : 2
+        duration: options.duration ? options.duration : 1.2
     });
 }

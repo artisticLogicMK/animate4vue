@@ -5,7 +5,8 @@
   "main": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc && rollup -c"
+    "build": "tsc && rollup -c",
+    "build-only": "rollup -c"
   },
   "type": "module",
   "keywords": [],

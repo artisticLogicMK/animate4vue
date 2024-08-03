@@ -1,7 +1,7 @@
 import { __assign } from "tslib";
 import ConstructAnimation from './constructAnimation';
 import { isValidAttOptions } from '../../utils/runtimeChecks';
-export function shakeHorizontal(element, options) {
+export function tada(element, options) {
     options = __assign({}, options);
     // Validate l options object to ensure it contains only allowed properties
     if (!isValidAttOptions(options)) {
@@ -10,21 +10,18 @@ export function shakeHorizontal(element, options) {
     }
     return new ConstructAnimation(element, {
         keyframes: [
-            { x: 0, duration: 0.1 }, // 0%
-            { x: -10, duration: 0.1 }, // 10%
-            { x: 10, duration: 0.1 }, // 20%
-            { x: -10, duration: 0.1 }, // 30%
-            { x: 10, duration: 0.1 }, // 40%
-            { x: -10, duration: 0.1 }, // 50%
-            { x: 10, duration: 0.1 }, // 60%
-            { x: -10, duration: 0.1 }, // 70%
-            { x: 10, duration: 0.1 }, // 80%
-            { x: -10, duration: 0.1 }, // 90%
-            { x: 0, duration: 0.1 } // 100%
+            { scaleX: 1, scaleY: 1, rotationZ: 0, duration: 0.2 },
+            { scaleX: 0.9, scaleY: 0.9, rotationZ: -3, duration: 0.2 },
+            { scaleX: 1.1, scaleY: 1.1, rotationZ: 3, duration: 0.2 },
+            { scaleX: 1.1, scaleY: 1.1, rotationZ: -3, duration: 0.2 },
+            { scaleX: 1.1, scaleY: 1.1, rotationZ: 3, duration: 0.2 },
+            { scaleX: 1.1, scaleY: 1.1, rotationZ: -3, duration: 0.2 },
+            { scaleX: 1, scaleY: 1, rotationZ: 0, duration: 0.2 }
         ],
+        transformOrigin: 'center center',
         ease: "power1.inOut",
         repeat: options.loop ? -1 : 0,
         repeatDelay: options.delay ? options.delay : 0.111,
-        duration: options.duration ? options.duration : 2
+        duration: options.duration ? options.duration : 1.4
     });
 }

@@ -84,8 +84,8 @@ const animate = (
       const allProperties = {
         ...defOptions,
         ...options,
-        ...properties,
-        opacity: parseFloat(fadeOption) || defOptions.opacity
+        opacity: parseFloat(fadeOption) || defOptions.opacity,
+        ...properties
       }
       
       // delete unneeded properties

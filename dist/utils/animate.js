@@ -65,7 +65,7 @@ var animate = function (direction, target, done, options, properties) {
                 }
             };
             // Merge default options with provided options and additional properties
-            var allProperties = __assign(__assign(__assign(__assign({}, defOptions), options), properties), { opacity: parseFloat(fadeOption) || defOptions.opacity });
+            var allProperties = __assign(__assign(__assign(__assign({}, defOptions), options), { opacity: parseFloat(fadeOption) || defOptions.opacity }), properties);
             // delete unneeded properties
             delete allProperties.fade;
             // Initialize timeline animation of element

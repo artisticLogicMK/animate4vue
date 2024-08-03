@@ -11,6 +11,8 @@ import { puffIn, puffOut } from './animations/puff';
 import { vanishIn, vanishOut } from './animations/vanish';
 import { perspectiveInRight, perspectiveInLeft, perspectiveInTop, perspectiveInBottom, perspectiveOutRight, perspectiveOutLeft, perspectiveOutTop, perspectiveOutBottom } from './animations/perspective';
 import { openTopLeft, openTopRight, openBottomLeft, openBottomRight, closeTopLeft, closeTopRight, closeBottomLeft, closeBottomRight } from './animations/openClose';
+import { textIn, textOut } from './animations/text';
+import customAnimation from './animations/customAnimation';
 // Attention seekers
 import { jello } from './animations/attentionSeekers/jello';
 import { bounce } from './animations/attentionSeekers/bounce';
@@ -20,7 +22,13 @@ import { headShake } from './animations/attentionSeekers/headShake';
 import { rubberBand } from './animations/attentionSeekers/rubberBand';
 import { shakeHorizontal } from './animations/attentionSeekers/shakeHorizontal';
 import { shakeVertical } from './animations/attentionSeekers/shakeVertical';
+import { swing } from './animations/attentionSeekers/swing';
+import { tada } from './animations/attentionSeekers/tada';
+import { wobble } from './animations/attentionSeekers/wobble';
+import { heartBeat } from './animations/attentionSeekers/heartBeat';
 export { 
+// Customize
+customAnimation, 
 // Fade animations
 fadeIn, fadeOut, 
 // List animations
@@ -47,5 +55,7 @@ vanishIn, vanishOut,
 perspectiveInRight, perspectiveInLeft, perspectiveInTop, perspectiveInBottom, perspectiveOutRight, perspectiveOutLeft, perspectiveOutTop, perspectiveOutBottom, 
 // open and close
 openTopLeft, openTopRight, openBottomLeft, openBottomRight, closeTopLeft, closeTopRight, closeBottomLeft, closeBottomRight, 
+// Texts
+textIn, textOut, 
 // Attention seekers
-jello, bounce, pulse, flash, rubberBand, headShake, shakeHorizontal, shakeVertical };
+jello, bounce, pulse, flash, rubberBand, headShake, shakeHorizontal, shakeVertical, swing, tada, wobble, heartBeat };
