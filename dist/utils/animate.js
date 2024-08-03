@@ -72,7 +72,7 @@ var animate = function (direction, target, done, options, properties) {
             var timeline = gsap.timeline();
             // Perform the animation based on the direction ('in(enter)' or 'out(leave')
             if (direction === 'in') { // Animation to enter
-                // Animate from the target state to the default state (e.g., fade in)
+                // Animate from the target state to the default state (e.g. fade in)
                 timeline.from(target, __assign(__assign({}, allProperties), { ease: (options.ease && setEase(options.ease)) || setEase(data.vnEnterEase) || (properties === null || properties === void 0 ? void 0 : properties.ease) }))
                     .to(target, { onComplete: function () {
                         done(); // Let vue know animation is complete
@@ -90,7 +90,7 @@ var animate = function (direction, target, done, options, properties) {
             }
         }
         catch (err) {
-            reject(new Error('Vuenimate - There was a problem running the animation.'));
+            reject('Animate.vue: ' + err);
         }
     });
 };
