@@ -2,7 +2,7 @@ import { gsap } from 'gsap'
 
 const customAnimation = (
   target: any,
-  done: () => void,
+  done: (() => void),
   direction: "enter" | "leave",
   config: object
 ): Promise<void> => {

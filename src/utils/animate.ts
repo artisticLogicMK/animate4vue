@@ -17,7 +17,7 @@ const animate = (
       // Default animation settings
       const defOptions = {
         duration: 0.5,  // Duration of the animation in seconds
-        opacity: 0, // Initial opacity value
+        opacity: 0.1, // Initial opacity value
         //display: 'none' // Element on hide at initial/end state
         delay: 0, // Start the animation immediatey by default
         ease: "power1.inOut"
@@ -30,8 +30,8 @@ const animate = (
       if (Object.keys(data).length > 0) {
         // Create an options object with values from the dataset or fallback to default values if not present
         const optionsData: Options = {
-          duration: parseFloat(data.vnDuration) || defOptions.duration,
-          delay: parseFloat(data.vnDelay) || defOptions.delay
+          duration: parseFloat(data.avDuration) || defOptions.duration,
+          delay: parseFloat(data.avDelay) || defOptions.delay
         }
         
         // Update the 'options' variable with the newly created options object
@@ -44,7 +44,7 @@ const animate = (
         return
       }
       
-      const fadeOption = options.fade || data.vnFade
+      const fadeOption = options.fade || data.avFade
       
       // This func maps a custom easing name to a GSAP easing value.
       const setEase = (selectedEase: string): string => {
@@ -99,7 +99,7 @@ const animate = (
         // Animate from the target state to the default state (e.g. fade in)
         timeline.from(target, {
           ...allProperties,
-          ease: (options.ease && setEase(options.ease)) || setEase(data.vnEnterEase) || properties?.ease
+          ease: (options.ease && setEase(options.ease)) || setEase(data.avEnterEase) || properties?.ease
         })
         .to(target, { onComplete: ()=> {
             done() // Let vue know animation is complete
@@ -110,7 +110,7 @@ const animate = (
         // Animate to the end state (e.g., fade out)
         timeline.to(target, {
           ...allProperties,
-          ease: (options.ease && setEase(options.ease)) || setEase(data.vnLeaveEase) || properties?.ease
+          ease: (options.ease && setEase(options.ease)) || setEase(data.avLeaveEase) || properties?.ease
         })
         .to(target, {
           onStart: ()=> done(), // Let vue know animation is complete
