@@ -9,7 +9,7 @@ var animate = function (direction, target, done, options, properties) {
             // Default animation settings
             var defOptions = {
                 duration: 0.5, // Duration of the animation in seconds
-                opacity: 0, // Initial opacity value
+                opacity: 0.1, // Initial opacity value
                 //display: 'none' // Element on hide at initial/end state
                 delay: 0, // Start the animation immediatey by default
                 ease: "power1.inOut"
@@ -20,8 +20,8 @@ var animate = function (direction, target, done, options, properties) {
             if (Object.keys(data).length > 0) {
                 // Create an options object with values from the dataset or fallback to default values if not present
                 var optionsData = {
-                    duration: parseFloat(data.vnDuration) || defOptions.duration,
-                    delay: parseFloat(data.vnDelay) || defOptions.delay
+                    duration: parseFloat(data.avDuration) || defOptions.duration,
+                    delay: parseFloat(data.avDelay) || defOptions.delay
                 };
                 // Update the 'options' variable with the newly created options object
                 options = __assign(__assign({}, optionsData), options);
@@ -31,7 +31,7 @@ var animate = function (direction, target, done, options, properties) {
                 console.error('Options object should only include: duration(number), fade(number), delay(number), ease(string), offset(string), onStart(func), and onComplete(func)');
                 return;
             }
-            var fadeOption = options.fade || data.vnFade;
+            var fadeOption = options.fade || data.avFade;
             // This func maps a custom easing name to a GSAP easing value.
             var setEase = function (selectedEase) {
                 // Define a mapping from custom easing names to GSAP easing values
@@ -73,7 +73,7 @@ var animate = function (direction, target, done, options, properties) {
             // Perform the animation based on the direction ('in(enter)' or 'out(leave')
             if (direction === 'in') { // Animation to enter
                 // Animate from the target state to the default state (e.g. fade in)
-                timeline.from(target, __assign(__assign({}, allProperties), { ease: (options.ease && setEase(options.ease)) || setEase(data.vnEnterEase) || (properties === null || properties === void 0 ? void 0 : properties.ease) }))
+                timeline.from(target, __assign(__assign({}, allProperties), { ease: (options.ease && setEase(options.ease)) || setEase(data.avEnterEase) || (properties === null || properties === void 0 ? void 0 : properties.ease) }))
                     .to(target, { onComplete: function () {
                         done(); // Let vue know animation is complete
                         resolve(); // Resolve promise
@@ -82,7 +82,7 @@ var animate = function (direction, target, done, options, properties) {
             }
             else { // animation to leave
                 // Animate to the end state (e.g., fade out)
-                timeline.to(target, __assign(__assign({}, allProperties), { ease: (options.ease && setEase(options.ease)) || setEase(data.vnLeaveEase) || (properties === null || properties === void 0 ? void 0 : properties.ease) }))
+                timeline.to(target, __assign(__assign({}, allProperties), { ease: (options.ease && setEase(options.ease)) || setEase(data.avLeaveEase) || (properties === null || properties === void 0 ? void 0 : properties.ease) }))
                     .to(target, {
                     onStart: function () { return done(); }, // Let vue know animation is complete
                     onComplete: function () { return resolve(); } // Resolve promise

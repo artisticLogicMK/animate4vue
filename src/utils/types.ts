@@ -14,7 +14,7 @@ export interface Options {
   ease?: string,
   /**
     * Defines the initial distance from which the animation should begin/end.
-    * Only applicable only for animations involving movement in right, left, up & down.
+    * Only applicable to animations involving movement in right, left, up & down.
   */
   offset?: string,
   /** Callback function executed when the animation starts. */
@@ -41,7 +41,7 @@ export type ExcludedOptionsKeys = Exclude<keyof any, keyof Options>
 export interface AttentionOptions {
   /** Duration of the animation in seconds. */
   duration?: number;
-  /** Delay before the animation starts, in seconds. */
+  /** Delay before the animation starts, in seconds. Also denotes repeat delay if thits on loop. */
   delay?: number;
   /** Indicator wether the animation should repeat or not. */
   loop?: boolean;
