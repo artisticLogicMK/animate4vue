@@ -17,6 +17,7 @@ export function pulse(element: any, options: AttentionOptions) {
     ease: "power1.inOut",
     repeat: options.loop ? -1 : 0,
     repeatDelay: options.delay ? options.delay : 0.111,
-    duration: options.duration ? options.duration : 1.5
+    duration: options.duration ? options.duration : 1.5,
+    yolo: true
   })
 }

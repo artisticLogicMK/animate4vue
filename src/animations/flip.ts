@@ -7,7 +7,6 @@ const flip = (direction: string): object => {
   return {
     perspective: 400,
     [direction]: 180,
-    ease: 'power1.in'
   }
 }
 

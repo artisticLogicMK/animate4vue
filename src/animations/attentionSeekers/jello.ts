@@ -25,6 +25,7 @@ export function jello(element: any, options: AttentionOptions) {
     ],
     repeat: options.loop ? -1 : 0,
     repeatDelay: options.delay ? options.delay : 0.111,
-    duration: options.duration ? options.duration : 1
+    duration: options.duration ? options.duration : 1,
+    yolo: true
   })
 }
