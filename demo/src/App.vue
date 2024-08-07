@@ -1,17 +1,52 @@
 <script setup>
+import { useStore } from '@/stores/store'
 
+import Tab from '@/components/Tab.vue'
+import Animations from '@/components/Animations.vue'
+
+import { PhSun, PhList } from "@phosphor-icons/vue"
+
+const store = useStore()
 </script>
 
 <template>
-  <div class="flex h-full max-w-5xl mx-auto">
+  <div class="flex h-full max-w-4xl mx-auto text-[--text-color] p-5">
     
-    <div class="grow shrink-0 flex flex-col justify-center items-center">
-      <div class="w-3 2h-96 bg-amber-400"></div>
-    </div>
-    
-    <div class="shrink-0 w-[250px] h-full bg-transparent rounded-lg border p-4">
+    <div class="grow shrink-0 flex flex-col px-4">
+      <div class="shrink-0 flex justify-between items-center w-full">
+        <img src="./assets/img/animatevue.svg" class="h-6" />
+        <div class="flex">
+          <button>
+            <PhSun />
+          </button>
+          
+          <button class="ml-3">
+            <PhList />
+          </button>
+        </div>
+      </div>
       
+      
+      <div class="grow flex flex-col h-full justify-center items-center">
+        
+        <Animations />
+        
+        <div class="text-base max-w-md text-center mb-5">
+          A library for ready-to-use animations designed for Vue.js applications, featuring over 100 high-performance UI animations crafted with GSAP, offering GPU-accelerated rendering with better performance and efficiency across all devices, unlike traditional CSS animation libraries--that can be taxing and less efficient on low-end devices.
+        </div>
+        <div class="text-center font-semibold">
+          <p class="text-xl font-bold mb-1">Get started using Animate.vue</p>
+          <div class="flex justify-center text-[#41b883] text-base">
+            <a href="" class="mr-3">NPM Repository</a>
+            <a href="">Github Repository</a>
+          </div>
+        </div>
+  
+      </div>
     </div>
+    
+    
+    <Tab />
     
   </div>
 </template>

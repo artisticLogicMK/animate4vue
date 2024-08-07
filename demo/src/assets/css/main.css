@@ -3,23 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --main-color: #bd51b7;
-  --main-color-dark: #9e4399;
-  --text-color: rgba(255, 255, 255, 0.75)
+  --main-color: #ffffff;
+  /*--main-color: #171717;*/
+  --border-color: rgba(0,0,0,0.1);
+  --text-color: #35495E;
 }
 
 html, body{
-    width: 100%;
-    height: 100%;
-    font-family: 'Open Sans', sans-serif;
-    /*font-family: OpenSans, sans-serif;*/
-    overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
 }
 *{
-    outline: none;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    scroll-behavior: smooth;
-    transition: all 0.2s;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  scroll-behavior: smooth;
 }
 *:focus {
   outline: 0 !important;
@@ -42,3 +41,5 @@ body.mobile *::-webkit-scrollbar{
     scrollbar-color: rgba(255,255,255,.2) transparent;
   }
 }
+
+.lines { @apply border-[--border-color]}
