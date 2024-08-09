@@ -1,5 +1,4 @@
 import { fadeIn, fadeOut } from './animations/fade'
-import { listInVertical, listOutVertical, listInHorizontal, listOutHorizontal } from './animations/list'
 import { slideInRight, slideInLeft, slideInTop, slideInBottom, slideInTopRight, slideInTopLeft, slideInBottomRight, slideInBottomLeft, slideOutRight, slideOutLeft, slideOutTop, slideOutBottom, slideOutTopRight, slideOutTopLeft, slideOutBottomRight, slideOutBottomLeft } from './animations/slide'
 import { wrapInVertical, wrapOutVertical, wrapInHorizontal, wrapOutHorizontal } from './animations/wrap'
 import { flipInHorizontal, flipOutHorizontal, flipInVertical, flipOutVertical, flipInHorizontalRight, flipInHorizontalLeft, flipInHorizontalTop, flipInHorizontalBottom, flipOutHorizontalRight, flipOutHorizontalLeft, flipOutHorizontalTop, flipOutHorizontalBottom, flipInVerticalRight, flipInVerticalLeft, flipInVerticalTop, flipInVerticalBottom, flipOutVerticalRight, flipOutVerticalLeft, flipOutVerticalTop, flipOutVerticalBottom } from './animations/flip'
@@ -34,10 +33,7 @@ export {
   
   // Fade animations
   fadeIn, fadeOut,
-  
-  // List animations
-  listInVertical, listOutVertical, listInHorizontal, listOutHorizontal,
-  
+
   // Slide animations
   slideInRight, slideInLeft, slideInTop, slideInBottom, slideInTopRight, slideInTopLeft, slideInBottomRight, slideInBottomLeft, slideOutRight, slideOutLeft, slideOutTop, slideOutBottom, slideOutTopRight, slideOutTopLeft, slideOutBottomRight, slideOutBottomLeft,
   

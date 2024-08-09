@@ -8,7 +8,7 @@ const skewInRight = (target: any, done: (() => void), options: Options): Promise
   return animate('in', target, done, options, {
     skewX: 30,
     ease: 'back.out',
-    x: offset ? `${offset}` : 100
+    x: offset ? `${offset}` : '100%'
   })
 }
 
@@ -17,7 +17,7 @@ const skewInLeft = (target: any, done: (() => void), options: Options): Promise<
   return animate('in', target, done, options, {
     skewX: -30,
     ease: 'back.out',
-    x: offset ? `-${offset}` : -100
+    x: offset ? `-${offset}` : '-100%'
   })
 }
 
@@ -28,7 +28,7 @@ const skewOutRight = (target: any, done: (() => void), options: Options): Promis
   return animate('out', target, done, options, {
     skewX: 30,
     ease: 'back.out',
-    x: offset ? `${offset}` : 100
+    x: offset ? `${offset}` : '100%'
   })
 }
 
@@ -37,7 +37,7 @@ const skewOutLeft = (target: any, done: (() => void), options: Options): Promise
   return animate('out', target, done, options, {
     skewX: -30,
     ease: 'back.out',
-    x: offset ? `-${offset}` : -100
+    x: offset ? `-${offset}` : '-100%'
   })
 }
 

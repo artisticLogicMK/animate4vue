@@ -11,7 +11,7 @@ const zoomInRight = (target: any, done: (() => void), options: Options): Promise
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     scale: 0,
-    x: offset ? `${offset}` : 100
+    x: offset ? `${offset}` : '100%'
   })
 }
 
@@ -19,7 +19,7 @@ const zoomInLeft = (target: any, done: (() => void), options: Options): Promise<
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     scale: 0,
-    x: offset ? `-${offset}` : -100
+    x: offset ? `-${offset}` : '-100%'
   })
 }
 
@@ -27,7 +27,7 @@ const zoomInTop = (target: any, done: (() => void), options: Options): Promise<v
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     scale: 0,
-    y: offset ? `-${offset}` : -100
+    y: offset ? `-${offset}` : '-100%'
   })
 }
 
@@ -35,7 +35,7 @@ const zoomInBottom = (target: any, done: (() => void), options: Options): Promis
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     scale: 0,
-    y: offset ? `${offset}` : 100
+    y: offset ? `${offset}` : '100%'
   })
 }
 
@@ -43,8 +43,8 @@ const zoomInTopRight = (target: any, done: (() => void), options: Options): Prom
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     scale: 0,
-    y: offset ? `-${offset}` : -100,
-    x: offset ? `${offset}` : 100
+    y: offset ? `-${offset}` : '-100%',
+    x: offset ? `${offset}` : '100%'
   })
 }
 
@@ -52,8 +52,8 @@ const zoomInTopLeft = (target: any, done: (() => void), options: Options): Promi
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     scale: 0,
-    y: offset ? `-${offset}` : -100,
-    x: offset ? `-${offset}` : -100
+    y: offset ? `-${offset}` : '-100%',
+    x: offset ? `-${offset}` : '-100%'
   })
 }
 
@@ -61,8 +61,8 @@ const zoomInBottomRight = (target: any, done: (() => void), options: Options): P
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     scale: 0,
-    y: offset ? `${offset}` : 100,
-    x: offset ? `${offset}` : 100
+    y: offset ? `${offset}` : '100%',
+    x: offset ? `${offset}` : '100%'
   })
 }
 
@@ -70,8 +70,8 @@ const zoomInBottomLeft = (target: any, done: (() => void), options: Options): Pr
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     scale: 0,
-    y: offset ? `${offset}` : 100,
-    x: offset ? `-${offset}` : -100
+    y: offset ? `${offset}` : '100%',
+    x: offset ? `-${offset}` : '-100%'
   })
 }
 
@@ -86,7 +86,7 @@ const zoomOutRight = (target: any, done: (() => void), options: Options): Promis
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     scale: 0,
-    x: offset ? `${offset}` : 100
+    x: offset ? `${offset}` : '100%'
   })
 }
 
@@ -94,7 +94,7 @@ const zoomOutLeft = (target: any, done: (() => void), options: Options): Promise
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     scale: 0,
-    x: offset ? `-${offset}` : -100
+    x: offset ? `-${offset}` : '-100%'
   })
 }
 
@@ -102,7 +102,7 @@ const zoomOutTop = (target: any, done: (() => void), options: Options): Promise<
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     scale: 0,
-    y: offset ? `-${offset}` : -100
+    y: offset ? `-${offset}` : '-100%'
   })
 }
 
@@ -110,7 +110,7 @@ const zoomOutBottom = (target: any, done: (() => void), options: Options): Promi
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     scale: 0,
-    y: offset ? `${offset}` : 100
+    y: offset ? `${offset}` : '100%'
   })
 }
 
@@ -118,8 +118,8 @@ const zoomOutTopRight = (target: any, done: (() => void), options: Options): Pro
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     scale: 0,
-    y: offset ? `-${offset}` : -100,
-    x: offset ? `${offset}` : 100
+    y: offset ? `-${offset}` : '-100%',
+    x: offset ? `${offset}` : '100%'
   })
 }
 
@@ -127,8 +127,8 @@ const zoomOutTopLeft = (target: any, done: (() => void), options: Options): Prom
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     scale: 0,
-    y: offset ? `-${offset}` : -100,
-    x: offset ? `-${offset}` : -100
+    y: offset ? `-${offset}` : '-100%',
+    x: offset ? `-${offset}` : '-100%'
   })
 }
 
@@ -136,8 +136,8 @@ const zoomOutBottomRight = (target: any, done: (() => void), options: Options): 
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     scale: 0,
-    y: offset ? `${offset}` : 100,
-    x: offset ? `${offset}` : 100
+    y: offset ? `${offset}` : '100%',
+    x: offset ? `${offset}` : '100%'
   })
 }
 
@@ -145,8 +145,8 @@ const zoomOutBottomLeft = (target: any, done: (() => void), options: Options): P
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     scale: 0,
-    y: offset ? `${offset}` : 100,
-    x: offset ? `-${offset}` : -100
+    y: offset ? `${offset}` : '100%',
+    x: offset ? `-${offset}` : '-100%'
   })
 }
 
