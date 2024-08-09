@@ -1,12 +1,12 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useStore } from '@/stores/store'
-import Anims from '@/components/Anims.vue'
+import AnimationsObject from '@/components/AnimationsObject.vue'
 
 const store = useStore()
 
-const inAnim = ref('puffIn')
-const outAnim = ref('puffOut')
+const inAnim = ref('fadeIn')
+const outAnim = ref('fadeOut')
 
 const inAnimations = {
   fade: {
@@ -151,8 +151,8 @@ const outAnimations = {
 }
 </script>
 
-<template>{{ outAnim }}
-  <div class="w-full max-w-md p-4 rounded-xl border lines">
+<template>
+  <div class="w-full max-w-md mx-auto p-4 rounded-xl border lines mb-7">
     
     <div class="flex">
       <div class="dir mr-4">
@@ -178,7 +178,7 @@ const outAnimations = {
       </div>
     </div>
     
-    <Anims :inAnim="inAnim" :outAnim="outAnim" />
+    <AnimationsObject :inAnim="inAnim" :outAnim="outAnim" />
   </div>
 </template>
 

@@ -94,41 +94,39 @@ const animations = {
   }
 }
 
-const setAnim = (name, effect) => {
-  if (effect.includes('In')) {
-    alert(effect)
-    store.setAnimation(name, effect)
-    store.show = true
-  } else {
-    //store.setAnimation(name, effect)
-    store.show = false
-  }
-}
+
 </script>
 
 <template>
   <div class="shrink-0 w-[270px] h-full bg-transparent overflow-y-auto rounded-lg border lines p-4">
     
-    <h1 class="text-base font-semibold mb-3">Animations</h1>
+    <button
+      @click="store.openTab = 'animations'"
+      class="tabs"
+      :class="{'active': store.openTab === 'animations'}"
+    >Animations</button>
     
-    <div
-      v-for="anim in animations"
-      :key="anim.name"
-      class="border rounded-md text-base mb-5 p-3"
-      :class="{'bg-neutral-100': store.animationType == anim.name}"
-    >
-      <p class="font-bold mb-0.5">{{ anim.name }}</p>
-      
-      <button
-        v-for="effects in anim.animations"
-        :key="effects"
-        @click="setAnim(anim.name, effects)"
-        class="block mb-0.5 hover:underline underline-offset-2 pointer-events-none"
-        :class="{'pointer-events-auto': store.animationType == anim.name}"
-      >
-        {{ effects }}
-      </button>
-    </div>
+    <button
+      @click="store.openTab = 'attention'"
+      class="tabs"
+      :class="{'active': store.openTab === 'attention'}"
+    >Attention Seekers</button>
+    
+    <button
+      @click="store.openTab = 'list'"
+      class="tabs"
+      :class="{'active': store.openTab === 'list'}"
+    >List Demo</button>
+    
     
   </div>
 </template>
+
+<style>
+.tabs {
+  @apply block text-base font-semibold mb-4 rounded-full px-3 py-1.5
+}
+.tabs.active {
+  @apply bg-[--green] text-white
+}
+</style>

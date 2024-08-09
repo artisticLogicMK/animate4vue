@@ -161,15 +161,20 @@ const show = ref(true)
 </script>
 
 <template>
-  <div class="h-14 my-20 text-center">
+  <div class="h-14 my-20 text-center text-[--text-color]">
       <Transition @enter="animateIn" @leave="animateOut">
-        <div v-if="show" class="h-14 w-56 mx-auto">
-          <img src="../assets/img/animatevue.svg" class="h-14 w-56 inline" />
-        </div>
+          <div v-if="show" class="bg-clip-text text-transparent bg-gradient-to-r from-[--text-color] to-[#41b883] font-bold text-4xl select-none">Animate.vue</div>
       </Transition>
     </div>
     
     <div class="text-center">
-      <button @click="show = !show" class="text-[--text-color] text-base rounded-md px-3 py-1 border lines font-semibold">Toggle Display</button>
+      <button @click="show = true" class="lines mr-4">Enter</button>
+      <button @click="show = false" class="lines">Leave</button>
     </div>
 </template>
+
+<style scoped>
+button {
+  @apply text-base rounded-md px-3 py-1 border font-semibold active:bg-[--green] active:text-white
+}
+</style>
