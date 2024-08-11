@@ -4,11 +4,13 @@
 
 :root {
   --main-color: #ffffff;
-  /*--main-color: #171717;*/
   --border-color: rgba(0,0,0,0.1);
   --text-color: #35495E;
-  --green: #41b883;
-  --green-dark: #349368;
+  --green: #388E3C;
+  --main-color-d: #171717;
+  --border-color-d: rgba(255, 255, 255, 0.1);
+  --text-color-d: #e0e0e0;
+  --green-d: #41b883;
 }
 
 html, body{
@@ -33,15 +35,24 @@ html, body{
 body.mobile *::-webkit-scrollbar{
   @apply w-[2px]
 }
-*::-webkit-scrollbar-thumb{border-radius:10px;background:rgba(255,255,255,.2)}
-*::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.4)}
+*::-webkit-scrollbar-thumb{
+  @apply bg-black/[0.2] dark:bg-white/[0.2] rounded-full
+}
+*::-webkit-scrollbar-thumb:hover{
+  @apply bg-black/[0.4] dark:bg-white/[0.4]
+}
 
 /* apply mozila specific style to scrollbar */
 @-moz-document url-prefix() {
   body * {
     scrollbar-width: thin;
-    scrollbar-color: rgba(255,255,255,.2) transparent;
+    scrollbar-color: rgba(0,0,0,.2) transparent;
+  }
+  @media (prefers-color-scheme: dark) {
+    body * {
+      scrollbar-color: rgba(255,255,255,.2) transparent;
+    }
   }
 }
 
-.lines { @apply border-[--border-color]}
+.lines { @apply border-[--border-color] dark:border-[--border-color-d]}

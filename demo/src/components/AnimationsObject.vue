@@ -161,9 +161,9 @@ const show = ref(true)
 </script>
 
 <template>
-  <div class="h-14 my-20 text-center text-[--text-color]">
+  <div class="h-14 my-20 text-center text-[--text-color] dark:text-[--text-color-d]">
       <Transition @enter="animateIn" @leave="animateOut">
-          <div v-if="show" class="bg-clip-text text-transparent bg-gradient-to-r from-[--text-color] to-[#41b883] font-bold text-4xl select-none">Animate.vue</div>
+          <div v-if="show" class="bg-clip-text text-transparent bg-gradient-to-r dark:bg-gradient-to-l from-[--text-color]  to-[#41b883] font-bold text-4xl select-none">Animate.vue</div>
       </Transition>
     </div>
     
@@ -175,6 +175,6 @@ const show = ref(true)
 
 <style scoped>
 button {
-  @apply text-base rounded-md px-3 py-1 border font-semibold active:bg-[--green] active:text-white
+  @apply text-base rounded-md px-3 py-1 border font-semibold active:bg-[--green] dark:active:bg-[--green-d] active:text-white/90
 }
 </style>

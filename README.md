@@ -4,7 +4,7 @@
 </div>
 
 ---
-**Animate.vue** is a library for ready-to-use animations designed for Vue.js applications, featuring over 100 high-performance UI animations crafted with GSAP, offering GPU-accelerated rendering with better performance and efficiency across all devices, as well as callbacks and async handling. Unlike traditional CSS animation libraries--that can be taxing and less efficient on low-end devices. Animate.vue make your animations look and feel flawless.
+**Animate.vue** is a library for ready-to-use animations designed for Vue.js applications, featuring over 100 high-performance UI animations crafted with GSAP, offering GPU-accelerated rendering with better performance and efficiency across all devices, as well as callbacks and async handling. Unlike traditional CSS animation libraries that can be taxing and less efficient on low-end devices. Animate.vue make your animations look and feel flawless.
 
 Offers TypeScript support, and tree-shaking, so only the animations you use are bundled, keeping your application lean and fast.
 
@@ -30,7 +30,7 @@ Traditional CSS animations often struggle with performance issues, especially on
 ---
 <br>
 
-[Installation](#installation) | [Usage](#usage) | [Animations](#animations) | [Animating Lists](#animating-lists) | [Attention Seekers](#attention-seekers) | [Custom Animation](#custom-animation) | [Feedback](#feedback) | [License](#license)
+[Installation](#installation) | [Usage](#usage) | [Options](#options) | [Animations](#animations) | [Attention Seekers](#attention-seekers) | [Custom Animation](#custom-animation) | [Feedback](#feedback) | [License](#license)
 
 ## Installation
 
@@ -62,6 +62,7 @@ import { puffIn, puffOut } from 'animate.vue';
 ```
 ![demo3](md_assets/demo3.gif)
 
+> Elements should be conditionally displayed using v-if for animations to work.
 > Make sure there are no animations or CSS transitions applied or conflicting with elements to animate, they might interfere and mess things up. For example, avoid specifying CSS transitions globally.
 
 `<TransitionGroup>` for animating multiple elements as they enter and leave the DOM:
@@ -70,7 +71,6 @@ import { puffIn, puffOut } from 'animate.vue';
     <li v-for="item in list">....</li>
   </TransitionGroup>
 ```
-<small>See [Animating Lists](#animating-lists)</small>
 
 Using the Vue Transitions method you can specify animation options by setting dataset attributes like so:
 ```html
@@ -107,7 +107,6 @@ const animateOut = (el, done) => {
 ```
 
 > Always pass the done as a second argument, needed to tell Vue to remove the element out the DOM when animation is finished.
-> Elements should be conditionally displayed using v-if for animations to work.
 
 When using function calls, you can pass options as a configuration object to the third parameter of the animation:
 ```javascript
@@ -318,27 +317,6 @@ const animateIn = (el, done) => {
 [View live demo of animations](https://animatevue.netlify.app)
 
 
-## Animating Lists
-Animating lists is done through Vue's `<TransitionGroup>` component. The `@enter` and `@leave` events can be used with any animation, but some special ones were created to add a stylish touch to list items as they appear and disappear:
-- **List Animations**
-  - `listInVertical` and `listOutVertical` – For lists aligned vertically on the Y-axis.
-  - `listInHorizontal` and `listOutHorizontal` – For lists aligned horizontally on the X-axis.
-
-### How To use:
-```html
-  <ul>
-    <TransitionGroup @enter="listInVertical" @leave="listOutVertical">
-      <li v-for="item in list" :key="item">
-        ...
-      </li>
-    </TransitionGroup>
-  </ul>
-```
-> :key values must be unique or the animations wont work properly.
-> Don't get it twisted! `<TransitionGroup>` also allow function calls and datasets attributes too.
-
-<br>
-
 ## Attention Seekers
 Attention seekers are animations designed to grab users' attention, such as a ringing bell icon or shaking elements. These animations enhance user engagement and provide a compelling experience. Animate.vue offers a variety of dynamic attention-seeking animations to fit any scenario.
 
@@ -355,7 +333,7 @@ const el = ref(null)
 
 const ringBell = () => {
   swing(el)
-  // You can also use any HTML selector such as '#target' or '.class'.
+  // You can also use any HTML selector such as '#target' or '.class' etc.
 }
 </script>
 

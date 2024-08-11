@@ -36,7 +36,7 @@ const stop = () => {
 </script>
 
 <template>
-  <div class="my-16 text-center text-[--text-color]">
+  <div class="my-16 text-center text-[--text-color] dark:text-[--text-color-d]">
     <div class="flex items-center justify-evenly">
       <img class="target" src="../assets/img/vue.webp" />
       <img class="target" src="../assets/img/bell.png" />
@@ -55,6 +55,6 @@ img {
   @apply w-24
 }
 button {
-  @apply text-base rounded-md px-3 py-1 border font-semibold active:bg-[--green] active:text-white
+  @apply text-base rounded-md px-3 py-1 border font-semibold active:bg-[--green] dark:active:bg-[--green-d] active:text-white/90
 }
 </style>

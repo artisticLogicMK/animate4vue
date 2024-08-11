@@ -1,7 +1,7 @@
 {
   "name": "animate.vue",
   "version": "1.0.0",
-  "description": "",
+  "description": "A library for ready-to-use animations designed for Vue.js applications, featuring over 100 high-performance UI animations crafted with GSAP, offering GPU-accelerated rendering with better performance and efficiency across all devices.",
   "main": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -9,9 +9,14 @@
     "build-only": "rollup -c"
   },
   "type": "module",
-  "keywords": [],
-  "author": "",
+  "repository": { 
+     "type": "git", 
+     "url": "git+https://github.com/artisticLogicMK/animate.vue.git" 
+   },
+  "keywords": ["animation", "animate", "vue", "gsap", "animation-library", "ui", "frontend", "vue-animation", "web-animation", "animate-website", "transition"],
+  "author": "MK",
   "license": "MIT",
+  "homepage": "https://github.com/artisticLogicMK/animate.vue#readme",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
@@ -25,9 +30,7 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
-    "animate.css": "^4.1.1",
     "gsap": "^3.12.5",
-    "magic.css": "^1.4.8",
     "tslib": "^2.6.3"
   }
 }
