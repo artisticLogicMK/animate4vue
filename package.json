@@ -9,20 +9,22 @@
     "build-only": "rollup -c"
   },
   "type": "module",
-  "repository": { 
-     "type": "git", 
-     "url": "git+https://github.com/artisticLogicMK/animate.vue.git" 
-   },
-  "keywords": ["animation", "animate", "vue", "gsap", "animation-library", "ui", "frontend", "vue-animation", "web-animation", "animate-website", "transition"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artisticLogicMK/animate.vue.git"
+  },
+  "keywords": [
+    "animation", "animate", "vue", "gsap", "animation-library", "ui", "frontend",
+    "vue-animation", "web-animation", "animate-website", "transition"
+  ],
   "author": "MK",
   "license": "MIT",
-  "homepage": "https://github.com/artisticLogicMK/animate.vue#readme",
+  "homepage": "https://github.com/artisticLogicMK/animate.vue#readme",
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/node": "^20.14.12",
-    "@types/react": "^18.3.3",
-    "@types/vue": "^2.0.0",
+    "@types/vue": "^3.0.0",
     "esbuild": "^0.23.0",
     "rollup": "^4.19.0",
     "rollup-plugin-esbuild": "^6.1.1",

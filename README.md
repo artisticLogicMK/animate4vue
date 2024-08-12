@@ -1,12 +1,19 @@
 
-<div style="text-align: center">
-<img src="md_assets/animatevue.svg" width="230px" style="margin: 0 auto 0 auto;" />
-</div>
+<p align="center">
+<img src="md_assets/animatevue.svg" width="230px" style="display:inline-block" />
+</p>
 
 ---
 **Animate.vue** is a library for ready-to-use animations designed for Vue.js applications, featuring over 100 high-performance UI animations crafted with GSAP, offering GPU-accelerated rendering with better performance and efficiency across all devices, as well as callbacks and async handling. Unlike traditional CSS animation libraries that can be taxing and less efficient on low-end devices. Animate.vue make your animations look and feel flawless.
 
 Offers TypeScript support, and tree-shaking, so only the animations you use are bundled, keeping your application lean and fast.
+
+![NPM Version](https://img.shields.io/npm/v/timelydiff)
+![Downloads](https://img.shields.io/npm/d18m/timelydiff?style=flat)
+![npm minimized gzipped](https://img.shields.io/bundlejs/size/timelydiff)
+![Language](https://img.shields.io/badge/types-included-blue.svg?style=flat)
+![NPM License](https://img.shields.io/npm/l/timelydiff?style=flat)
+![Vue Support](https://img.shields.io/badge/vue-3%20&%202-1cb884.svg?style=flat)
 
 <details>
   <summary><strong>Why Animate.vue Was Created</strong></summary>
