@@ -8,11 +8,11 @@
 
 Offers TypeScript support, and tree-shaking, so only the animations you use are bundled, keeping your application lean and fast.
 
-![Downloads](https://img.shields.io/npm/d18m/timelydiff?style=flat&color=%23f2476a)
+![Downloads](https://img.shields.io/npm/d18m/timelydiff?style=flat&color=%23e94335)
 ![NPM Version](https://img.shields.io/npm/v/timelydiff?style=flat&color=%23cd8b62)
-![Minified size (gzip)](https://img.shields.io/bundlejs/size/timelydiff)
+![Minified size (gzip)](https://img.shields.io/bundlejs/size/timelydiff?color=%2312a4a6)
 ![Language](https://img.shields.io/badge/types-included-blue.svg?style=flat)
-![NPM License](https://img.shields.io/npm/l/timelydiff?style=flat&color=%23433267)
+![NPM License](https://img.shields.io/npm/l/timelydiff?style=flat&color=%23f9bb0a)
 ![Vue Support](https://img.shields.io/badge/vue-3%20&%202-1cb884.svg?style=flat)
 
 <details>
