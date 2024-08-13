@@ -32,6 +32,7 @@ Traditional CSS animations often struggle with performance issues, especially on
 - **🔄 Fine-grained Control:** Offer callbacks for animation state, and asynchronous handling.
 </details>
 
+<br>
 ## Live Demo
 ### [See all available animations in the demo](https://animate4vue.netlify.app)
 ---
