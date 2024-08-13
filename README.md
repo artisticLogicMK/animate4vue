@@ -1,6 +1,6 @@
 
 <p align="center">
-<img src="https://github.com/artisticLogicMK/animate.vue/blob/master/md_assets/animatevue.svg" width="230px" style="display:inline-block" />
+<img src="https://github.com/artisticLogicMK/vue.animate/blob/master/md_assets/animatevue.svg" width="230px" style="display:inline-block" />
 </p>
 
 ---
@@ -44,11 +44,11 @@ Traditional CSS animations often struggle with performance issues, especially on
 You can install Animate.vue via npm or yarn:
 
 ```bash
-npm install animate.vue
+npm install vue.animate
 ```
 or
 ```bash
-yarn add animate.vue
+yarn add vue.animate
 ```
 
 ## Usage
@@ -58,7 +58,7 @@ There are two primary ways to integrate animations into your Vue component:
 `<Transition>` for animating single elements:
 ```html
 <script setup>
-import { puffIn, puffOut } from 'animate.vue';
+import { puffIn, puffOut } from 'vue.animate';
 </script>
 
 <template>
@@ -67,7 +67,7 @@ import { puffIn, puffOut } from 'animate.vue';
   </Transition>
 </template>
 ```
-![demo3](https://github.com/artisticLogicMK/animate.vue/blob/master/md_assets/demo3.gif)
+![demo3](https://github.com/artisticLogicMK/vue.animate/blob/master/md_assets/demo3.gif)
 
 > Elements should be conditionally displayed using v-if for animations to work.
 > Make sure there are no animations or CSS transitions applied or conflicting with elements to animate, they might interfere and mess things up. For example, avoid specifying CSS transitions globally.
@@ -85,7 +85,7 @@ Using the Vue Transitions method you can specify animation options by setting da
     <div v-if="show" data-av-leave-ease="backIn" data-av-offset="100%" ...>....</div>
   </Transition>
 ```
-![demo4](https://github.com/artisticLogicMK/animate.vue/blob/master/md_assets/demo4.gif)
+![demo4](https://github.com/artisticLogicMK/vue.animate/blob/master/md_assets/demo4.gif)
 `data-av-[option property]="..."`
 > Options using dataset attributes apply to both @enter and @leave animations except [data-vn-enter-ease](#enterease) and [data-vn-leave-ease](leaveease).
 
@@ -93,7 +93,7 @@ Using the Vue Transitions method you can specify animation options by setting da
 ### 2. Through function call.
 ```html
 <script setup>
-import { zoomIn, zoomOut } from 'animate.vue';
+import { zoomIn, zoomOut } from 'vue.animate';
 
 const animateIn = (el, done) => {
   zoomIn(el, done)
@@ -253,7 +253,7 @@ zoomIn(el, done).then(() => console.log('Success'))
 When using both function call and dataset options for an animation, remember that function call options take precedence. This means only the dataset attributes not covered by the function call will be applied. For instance:
 ```html
 <script setup>
-import { rollIn, rollOut } from 'animate.vue';
+import { rollIn, rollOut } from 'vue.animate';
 
 const animateIn = (el, done) => {
   rollIn(el, done, {
@@ -333,7 +333,7 @@ Attention seekers are animations designed to grab users' attention, such as a ri
 ### How To Use:
 ```html
 <script setup>
-import { swing } from 'animate.vue';
+import { swing } from 'vue.animate';
 import { ref } from 'vue';
 
 const el = ref(null)
@@ -353,7 +353,7 @@ const ringBell = () => {
 </template>
 ```
 
-![demo1](https://github.com/artisticLogicMK/animate.vue/blob/master/md_assets/demo1.gif)
+![demo1](https://github.com/artisticLogicMK/vue.animate/blob/master/md_assets/demo1.gif)
 
 You can pass options to customize the animation behavior. For example:
 ```javascript
@@ -398,7 +398,7 @@ Attention seekers provide a `kill()` method to stop ongoing animations, especial
 ### Example Usage:
 ```html
 <script setup>
-import { rubberBand } from 'animate.vue';
+import { rubberBand } from 'vue.animate';
 import { ref, onMounted } from 'vue';
 
 let animation = null
@@ -428,7 +428,7 @@ onMounted(() => {
   <button @click="stopRingBell">Stop</button>
 </template>
 ```
-![demo2](https://github.com/artisticLogicMK/animate.vue/blob/master/md_assets/demo2.gif)
+![demo2](https://github.com/artisticLogicMK/vue.animate/blob/master/md_assets/demo2.gif)
 > Attention seeker animations also work with <Transition @enter="jello"> events.
 
 <br>
@@ -438,7 +438,7 @@ Animate.vue offers a flexible `customAnimation` method, allowing you to define y
 
 ```html
 <script setup>
-import { customAnimation } from 'animate.vue';
+import { customAnimation } from 'vue.animate';
 
 const animateIn = (el, done) => {
   customAnimation(el, done, "enter", {
@@ -493,7 +493,7 @@ customAnimation(el, done, "leave", {
 
 
 ## Feedback
-If you have feature requests, encounter any issues or bugs, or have suggestions for improving the code, please open an issue on the [GitHub repository](https://github.com/artisticLogicMK/animate.vue/).
+If you have feature requests, encounter any issues or bugs, or have suggestions for improving the code, please open an issue on the [GitHub repository](https://github.com/artisticLogicMK/vue.animate/).
 
 ## License
-This project is distributed under the [MIT License](https://github.com/artisticLogicMK/animate.vue/blob/master/LICENSE).
+This project is distributed under the [MIT License](https://github.com/artisticLogicMK/vue.animate/blob/master/LICENSE).
