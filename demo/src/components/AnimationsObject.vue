@@ -161,7 +161,7 @@ const show = ref(true)
 </script>
 
 <template>
-  <div class="h-9 sm:h-10 w-[12.2rem] sm:w-[14.5rem] mx-auto my-20 text-centerj text-[--text-color] dark:text-[--text-color-d]">
+  <div class="h-9 sm:h-10 w-[12.7rem] sm:w-[15.2rem] mx-auto my-20 text-centerj text-[--text-color] dark:text-[--text-color-d]">
       <Transition @enter="animateIn" @leave="animateOut">
           <div v-if="show" class="bg-clip-text text-transparent bg-gradient-to-r from-[--text-color-light] to-[--green] font-bold text-3xl sm:text-4xl select-none">Animate4vue</div>
       </Transition>

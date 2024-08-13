@@ -8,11 +8,11 @@
 
 Offers TypeScript support, and tree-shaking, so only the animations you use are bundled, keeping your application lean and fast.
 
-![Downloads](https://img.shields.io/npm/d18m/timelydiff?style=flat&color=%23e94335)
-![NPM Version](https://img.shields.io/npm/v/timelydiff?style=flat&color=%23cd8b62)
-![Minified size (gzip)](https://img.shields.io/bundlejs/size/timelydiff?color=%2312a4a6)
+![Downloads](https://img.shields.io/npm/d18m/animate4vue?style=flat&color=%23e94335)
+![NPM Version](https://img.shields.io/npm/v/animate4vue?style=flat&color=%23cd8b62)
+![Minified size (gzip)](https://img.shields.io/bundlejs/size/animate4vue?color=%2312a4a6)
 ![Language](https://img.shields.io/badge/types-included-blue.svg?style=flat)
-![NPM License](https://img.shields.io/npm/l/timelydiff?style=flat&color=%23f9bb0a)
+![NPM License](https://img.shields.io/npm/l/animate4vue?style=flat&color=%23f9bb0a)
 ![Vue Support](https://img.shields.io/badge/vue-3%20&%202-1cb884.svg?style=flat)
 
 <details>
@@ -345,9 +345,7 @@ const ringBell = () => {
 </script>
 
 <template>
-  <i ref="el" class="fa fa-bell">
-    ...
-  </i>
+  <img ref="el" src="bell.png" />
   
   <button @click="ringBell">Ring</button>
 </template>
@@ -420,10 +418,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <i id="target" class="fa fa-bell">
-    ...
-  </i>
-  
+  <img id="target" src="bell.png" />
+    
   <button @click="ringBell">Ring</button>
   <button @click="stopRingBell">Stop</button>
 </template>
