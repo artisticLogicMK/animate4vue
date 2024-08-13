@@ -1,10 +1,10 @@
 
 <p align="center">
-<img src="https://github.com/artisticLogicMK/vue.animate/blob/master/md_assets/animatevue.svg" width="230px" style="display:inline-block" />
+<img src="https://github.com/artisticLogicMK/vue.animate/blob/master/md_assets/vueanimate.svg" width="230px" style="display:inline-block" />
 </p>
 
 ---
-**Animate.vue** is a library for ready-to-use animations designed for Vue.js applications, featuring over 100 high-performance UI animations crafted with GSAP, offering GPU-accelerated rendering with better performance and efficiency across all devices, as well as callbacks and async handling. Unlike traditional CSS animation libraries that can be tasking and less efficient on low-end devices. Animate.vue make your animations look and feel flawless.
+**Vue.animate** is a library for ready-to-use animations designed for Vue.js applications, featuring over 100 high-performance UI animations crafted with GSAP, offering GPU-accelerated rendering with better performance and efficiency across all devices, as well as callbacks and async handling. Unlike traditional CSS animation libraries that can be tasking and less efficient on low-end devices. Vue.animate make your animations look and feel flawless.
 
 Offers TypeScript support, and tree-shaking, so only the animations you use are bundled, keeping your application lean and fast.
 
@@ -16,9 +16,9 @@ Offers TypeScript support, and tree-shaking, so only the animations you use are 
 ![Vue Support](https://img.shields.io/badge/vue-3%20&%202-1cb884.svg?style=flat)
 
 <details>
-  <summary><strong>Why Animate.vue Was Created</strong></summary>
+  <summary><strong>Why Vue.animate Was Created</strong></summary>
 
-Traditional CSS animations often struggle with performance issues, especially on less powerful devices, due to their heavy reliance on the browser's rendering engine 😟. To overcome these limitations, Animate.vue uses GSAP, a robust JavaScript animation library that provides smooth, GPU-accelerated animations 💨. GSAP's efficiency and power ensure that animations remain fluid and responsive, regardless of device capabilities, making it an ideal choice for modern web applications ✌️. Additionally, JavaScript animations offer greater control, including callbacks and async functionality, enhancing flexibility and precision in your projects 🎯.
+Traditional CSS animations often struggle with performance issues, especially on less powerful devices, due to their heavy reliance on the browser's rendering engine 😟. To overcome these limitations, Vue.animate uses GSAP, a robust JavaScript animation library that provides smooth, GPU-accelerated animations 💨. GSAP's efficiency and power ensure that animations remain fluid and responsive, regardless of device capabilities, making it an ideal choice for modern web applications ✌️. Additionally, JavaScript animations offer greater control, including callbacks and async functionality, enhancing flexibility and precision in your projects 🎯.
 </details>
 <br>
 
@@ -33,7 +33,7 @@ Traditional CSS animations often struggle with performance issues, especially on
 </details>
 
 ## Live Demo
-### [See all available animations in the demo](https://animatevue.netlify.app)
+### [See all available animations in the demo](https://vueanimate.netlify.app)
 ---
 <br>
 
@@ -41,7 +41,7 @@ Traditional CSS animations often struggle with performance issues, especially on
 
 ## Installation
 
-You can install Animate.vue via npm or yarn:
+You can install Vue.animate via npm or yarn:
 
 ```bash
 npm install vue.animate
@@ -321,11 +321,11 @@ const animateIn = (el, done) => {
 </details>
 <small>More coming...</small>
 
-[View live demo of animations](https://animatevue.netlify.app)
+[View live demo of animations](https://vueanimate.netlify.app)
 
 
 ## Attention Seekers
-Attention seekers are animations designed to grab users' attention, such as a ringing bell icon or shaking elements. These animations enhance user engagement and provide a compelling experience. Animate.vue offers a variety of dynamic attention-seeking animations to fit any scenario.
+Attention seekers are animations designed to grab users' attention, such as a ringing bell icon or shaking elements. These animations enhance user engagement and provide a compelling experience. Vue.animate offers a variety of dynamic attention-seeking animations to fit any scenario.
 
 ### Available Attention-Seeker Animations
 `jello`, `bounce`, `pulse`, `flash`, `rubberBand`, `headShake`, `shakeHorizontal`, `shakeVertical`, `swing`, `tada`, `wobble`, `heartBeat`
@@ -434,7 +434,7 @@ onMounted(() => {
 <br>
 
 ## Custom Animation
-Animate.vue offers a flexible `customAnimation` method, allowing you to define your own animations dynamically.
+Vue.animate offers a flexible `customAnimation` method, allowing you to define your own animations dynamically.
 
 ```html
 <script setup>
