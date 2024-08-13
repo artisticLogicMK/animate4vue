@@ -1,6 +1,6 @@
 
 <p align="center">
-<img src="md_assets/animatevue.svg" width="230px" style="display:inline-block" />
+<img src="https://github.com/artisticLogicMK/animate.vue/blob/master/md_assets/animatevue.svg" width="230px" style="display:inline-block" />
 </p>
 
 ---
@@ -67,7 +67,7 @@ import { puffIn, puffOut } from 'animate.vue';
   </Transition>
 </template>
 ```
-![demo3](md_assets/demo3.gif)
+![demo3](https://github.com/artisticLogicMK/animate.vue/blob/master/md_assets/demo3.gif)
 
 > Elements should be conditionally displayed using v-if for animations to work.
 > Make sure there are no animations or CSS transitions applied or conflicting with elements to animate, they might interfere and mess things up. For example, avoid specifying CSS transitions globally.
@@ -85,7 +85,7 @@ Using the Vue Transitions method you can specify animation options by setting da
     <div v-if="show" data-av-leave-ease="backIn" data-av-offset="100%" ...>....</div>
   </Transition>
 ```
-![demo4](md_assets/demo4.gif)
+![demo4](https://github.com/artisticLogicMK/animate.vue/blob/master/md_assets/demo4.gif)
 `data-av-[option property]="..."`
 > Options using dataset attributes apply to both @enter and @leave animations except [data-vn-enter-ease](#enterease) and [data-vn-leave-ease](leaveease).
 
@@ -353,7 +353,7 @@ const ringBell = () => {
 </template>
 ```
 
-![demo1](md_assets/demo1.gif)
+![demo1](https://github.com/artisticLogicMK/animate.vue/blob/master/md_assets/demo1.gif)
 
 You can pass options to customize the animation behavior. For example:
 ```javascript
@@ -428,7 +428,7 @@ onMounted(() => {
   <button @click="stopRingBell">Stop</button>
 </template>
 ```
-![demo2](md_assets/demo2.gif)
+![demo2](https://github.com/artisticLogicMK/animate.vue/blob/master/md_assets/demo2.gif)
 > Attention seeker animations also work with <Transition @enter="jello"> events.
 
 <br>
@@ -493,7 +493,7 @@ customAnimation(el, done, "leave", {
 
 
 ## Feedback
-If you have feature requests, encounter any issues or bugs, or have suggestions for improving the code, please open an issue on our [GitHub repository](https://github.com/artisticLogicMK/animate.vue/).
+If you have feature requests, encounter any issues or bugs, or have suggestions for improving the code, please open an issue on the [GitHub repository](https://github.com/artisticLogicMK/animate.vue/).
 
 ## License
 This project is distributed under the [MIT License](https://github.com/artisticLogicMK/animate.vue/blob/master/LICENSE).

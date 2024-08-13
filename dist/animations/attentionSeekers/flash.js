@@ -16,6 +16,7 @@ export function flash(element, options) {
         ],
         repeat: options.loop ? -1 : 0,
         repeatDelay: options.delay ? options.delay : 0.111,
-        duration: options.duration ? options.duration : 1.2
+        duration: options.duration ? options.duration : 1.2,
+        yolo: true
     });
 }

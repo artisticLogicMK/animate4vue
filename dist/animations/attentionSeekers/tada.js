@@ -22,6 +22,7 @@ export function tada(element, options) {
         ease: "power1.inOut",
         repeat: options.loop ? -1 : 0,
         repeatDelay: options.delay ? options.delay : 0.111,
-        duration: options.duration ? options.duration : 1.4
+        duration: options.duration ? options.duration : 1.4,
+        yolo: true
     });
 }

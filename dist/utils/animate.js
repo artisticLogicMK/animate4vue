@@ -26,7 +26,7 @@ var animate = function (direction, target, done, options, properties) {
                 // Update the 'options' variable with the newly created options object
                 options = __assign(__assign({}, optionsData), options);
             }
-            // Validate the options object to ensure it contains only allowed properties
+            // Validate the options object to ensure it contains only allowed properties, if not stop
             if (!isValidOptions(options)) {
                 console.error('Options object should only include: duration(number), fade(number), delay(number), ease(string), offset(string), onStart(func), and onComplete(func)');
                 return;
