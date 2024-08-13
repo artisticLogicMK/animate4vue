@@ -27,7 +27,7 @@ onMounted(() => {
 <template>
   <div class="max-w-4xl mx-auto text-[--text-color] dark:text-[--text-color-d] flex flex-col px-4">
     <div class="shrink-0 flex justify-between items-center w-full pt-5 pb-3">
-      <img src="./assets/img/vueanimate.svg" class="h-6" />
+      <img src="./assets/img/animate4vue.svg" class="h-6" />
       <div class="flex text-xl">
         <button @click="changeTheme()">
           <PhSun class="hidden dark:block" />
@@ -67,7 +67,7 @@ onMounted(() => {
         <p class="text-base xl:text-xl font-bold mb-1">Get started using Vue.animate</p>
         <div class="flex justify-center text-[--green] dark:text-[--green-d] text-sm xs:text-base">
           <a href="" class="mr-3">NPM Repository</a>
-          <a href="https://github.com/artisticLogicMK/vue.animate">Github Repository</a>
+          <a href="https://github.com/artisticLogicMK/animate4vue">Github Repository</a>
         </div>
       </div>
 

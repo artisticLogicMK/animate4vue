@@ -1,6 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { jello, bounce, pulse, flash, rubberBand, headShake, shakeHorizontal, shakeVertical, swing, tada, wobble, heartBeat } from 'vue.animate'
+import { jello, bounce, pulse, flash, rubberBand, headShake, shakeHorizontal, shakeVertical, swing, tada, wobble, heartBeat } from 'animate4vue'
 
 const props = defineProps({
   attention: String,

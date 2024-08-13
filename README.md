@@ -1,10 +1,10 @@
 
 <p align="center">
-<img src="https://github.com/artisticLogicMK/vue.animate/blob/master/md_assets/vueanimate.svg" width="230px" style="display:inline-block" />
+<img src="https://github.com/artisticLogicMK/animate4vue/blob/master/md_assets/animate4vue.svg" width="230px" style="display:inline-block" />
 </p>
 
 ---
-**Vue.animate** is a library for ready-to-use animations designed for Vue.js applications, featuring over 100 high-performance UI animations crafted with GSAP, offering GPU-accelerated rendering with better performance and efficiency across all devices, as well as callbacks and async handling. Unlike traditional CSS animation libraries that can be tasking and less efficient on low-end devices. Vue.animate make your animations look and feel flawless.
+**Animate4vue** is a library for ready-to-use animations designed for Vue.js applications, featuring over 100 high-performance UI animations crafted with GSAP, offering GPU-accelerated rendering with better performance and efficiency across all devices, as well as callbacks and async handling. Unlike traditional CSS animation libraries that can be tasking and less efficient on low-end devices. Animate4vue make your animations look and feel flawless.
 
 Offers TypeScript support, and tree-shaking, so only the animations you use are bundled, keeping your application lean and fast.
 
@@ -16,9 +16,9 @@ Offers TypeScript support, and tree-shaking, so only the animations you use are 
 ![Vue Support](https://img.shields.io/badge/vue-3%20&%202-1cb884.svg?style=flat)
 
 <details>
-  <summary><strong>Why Vue.animate Was Created</strong></summary>
+  <summary><strong>Why Animate4vue Was Created</strong></summary>
 
-Traditional CSS animations often struggle with performance issues, especially on less powerful devices, due to their heavy reliance on the browser's rendering engine 😟. To overcome these limitations, Vue.animate uses GSAP, a robust JavaScript animation library that provides smooth, GPU-accelerated animations 💨. GSAP's efficiency and power ensure that animations remain fluid and responsive, regardless of device capabilities, making it an ideal choice for modern web applications ✌️. Additionally, JavaScript animations offer greater control, including callbacks and async functionality, enhancing flexibility and precision in your projects 🎯.
+Traditional CSS animations often struggle with performance issues, especially on less powerful devices, due to their heavy reliance on the browser's rendering engine 😟. To overcome these limitations, Animate4vue uses GSAP, a robust JavaScript animation library that provides smooth, GPU-accelerated animations 💨. GSAP's efficiency and power ensure that animations remain fluid and responsive, regardless of device capabilities, making it an ideal choice for modern web applications ✌️. Additionally, JavaScript animations offer greater control, including callbacks and async functionality, enhancing flexibility and precision in your projects 🎯.
 </details>
 <br>
 
@@ -33,7 +33,7 @@ Traditional CSS animations often struggle with performance issues, especially on
 </details>
 
 ## Live Demo
-### [See all available animations in the demo](https://vueanimate.netlify.app)
+### [See all available animations in the demo](https://animate4vue.netlify.app)
 ---
 <br>
 
@@ -41,14 +41,14 @@ Traditional CSS animations often struggle with performance issues, especially on
 
 ## Installation
 
-You can install Vue.animate via npm or yarn:
+You can install Animate4vue via npm or yarn:
 
 ```bash
-npm install vue.animate
+npm install animate4vue
 ```
 or
 ```bash
-yarn add vue.animate
+yarn add animate4vue
 ```
 
 ## Usage
@@ -58,7 +58,7 @@ There are two primary ways to integrate animations into your Vue component:
 `<Transition>` for animating single elements:
 ```html
 <script setup>
-import { puffIn, puffOut } from 'vue.animate';
+import { puffIn, puffOut } from 'animate4vue';
 </script>
 
 <template>
@@ -67,7 +67,7 @@ import { puffIn, puffOut } from 'vue.animate';
   </Transition>
 </template>
 ```
-![demo3](https://github.com/artisticLogicMK/vue.animate/blob/master/md_assets/demo3.gif)
+![demo3](https://github.com/artisticLogicMK/animate4vue/blob/master/md_assets/demo3.gif)
 
 > Elements should be conditionally displayed using v-if for animations to work.
 > Make sure there are no animations or CSS transitions applied or conflicting with elements to animate, they might interfere and mess things up. For example, avoid specifying CSS transitions globally.
@@ -85,7 +85,7 @@ Using the Vue Transitions method you can specify animation options by setting da
     <div v-if="show" data-av-leave-ease="backIn" data-av-offset="100%" ...>....</div>
   </Transition>
 ```
-![demo4](https://github.com/artisticLogicMK/vue.animate/blob/master/md_assets/demo4.gif)
+![demo4](https://github.com/artisticLogicMK/animate4vue/blob/master/md_assets/demo4.gif)
 `data-av-[option property]="..."`
 > Options using dataset attributes apply to both @enter and @leave animations except [data-vn-enter-ease](#enterease) and [data-vn-leave-ease](leaveease).
 
@@ -93,7 +93,7 @@ Using the Vue Transitions method you can specify animation options by setting da
 ### 2. Through function call.
 ```html
 <script setup>
-import { zoomIn, zoomOut } from 'vue.animate';
+import { zoomIn, zoomOut } from 'animate4vue';
 
 const animateIn = (el, done) => {
   zoomIn(el, done)
@@ -253,7 +253,7 @@ zoomIn(el, done).then(() => console.log('Success'))
 When using both function call and dataset options for an animation, remember that function call options take precedence. This means only the dataset attributes not covered by the function call will be applied. For instance:
 ```html
 <script setup>
-import { rollIn, rollOut } from 'vue.animate';
+import { rollIn, rollOut } from 'animate4vue';
 
 const animateIn = (el, done) => {
   rollIn(el, done, {
@@ -321,11 +321,11 @@ const animateIn = (el, done) => {
 </details>
 <small>More coming...</small>
 
-[View live demo of animations](https://vueanimate.netlify.app)
+[View live demo of animations](https://animate4vue.netlify.app)
 
 
 ## Attention Seekers
-Attention seekers are animations designed to grab users' attention, such as a ringing bell icon or shaking elements. These animations enhance user engagement and provide a compelling experience. Vue.animate offers a variety of dynamic attention-seeking animations to fit any scenario.
+Attention seekers are animations designed to grab users' attention, such as a ringing bell icon or shaking elements. These animations enhance user engagement and provide a compelling experience. Animate4vue offers a variety of dynamic attention-seeking animations to fit any scenario.
 
 ### Available Attention-Seeker Animations
 `jello`, `bounce`, `pulse`, `flash`, `rubberBand`, `headShake`, `shakeHorizontal`, `shakeVertical`, `swing`, `tada`, `wobble`, `heartBeat`
@@ -333,7 +333,7 @@ Attention seekers are animations designed to grab users' attention, such as a ri
 ### How To Use:
 ```html
 <script setup>
-import { swing } from 'vue.animate';
+import { swing } from 'animate4vue';
 import { ref } from 'vue';
 
 const el = ref(null)
@@ -353,7 +353,7 @@ const ringBell = () => {
 </template>
 ```
 
-![demo1](https://github.com/artisticLogicMK/vue.animate/blob/master/md_assets/demo1.gif)
+![demo1](https://github.com/artisticLogicMK/animate4vue/blob/master/md_assets/demo1.gif)
 
 You can pass options to customize the animation behavior. For example:
 ```javascript
@@ -398,7 +398,7 @@ Attention seekers provide a `kill()` method to stop ongoing animations, especial
 ### Example Usage:
 ```html
 <script setup>
-import { rubberBand } from 'vue.animate';
+import { rubberBand } from 'animate4vue';
 import { ref, onMounted } from 'vue';
 
 let animation = null
@@ -428,17 +428,17 @@ onMounted(() => {
   <button @click="stopRingBell">Stop</button>
 </template>
 ```
-![demo2](https://github.com/artisticLogicMK/vue.animate/blob/master/md_assets/demo2.gif)
+![demo2](https://github.com/artisticLogicMK/animate4vue/blob/master/md_assets/demo2.gif)
 > Attention seeker animations also work with <Transition @enter="jello"> events.
 
 <br>
 
 ## Custom Animation
-Vue.animate offers a flexible `customAnimation` method, allowing you to define your own animations dynamically.
+Animate4vue offers a flexible `customAnimation` method, allowing you to define your own animations dynamically.
 
 ```html
 <script setup>
-import { customAnimation } from 'vue.animate';
+import { customAnimation } from 'animate4vue';
 
 const animateIn = (el, done) => {
   customAnimation(el, done, "enter", {
@@ -493,7 +493,7 @@ customAnimation(el, done, "leave", {
 
 
 ## Feedback
-If you have feature requests, encounter any issues or bugs, or have suggestions for improving the code, please open an issue on the [GitHub repository](https://github.com/artisticLogicMK/vue.animate/).
+If you have feature requests, encounter any issues or bugs, or have suggestions for improving the code, please open an issue on the [GitHub repository](https://github.com/artisticLogicMK/animate4vue/).
 
 ## License
-This project is distributed under the [MIT License](https://github.com/artisticLogicMK/vue.animate/blob/master/LICENSE).
+This project is distributed under the [MIT License](https://github.com/artisticLogicMK/animate4vue/blob/master/LICENSE).

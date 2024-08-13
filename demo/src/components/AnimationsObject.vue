@@ -39,7 +39,7 @@ import {
   
   // Texts
   textIn, textOut
-} from 'vue.animate'
+} from 'animate4vue'
 
 const props = defineProps({
   inAnim: String,
@@ -163,7 +163,7 @@ const show = ref(true)
 <template>
   <div class="h-9 sm:h-10 w-[12.2rem] sm:w-[14.5rem] mx-auto my-20 text-centerj text-[--text-color] dark:text-[--text-color-d]">
       <Transition @enter="animateIn" @leave="animateOut">
-          <div v-if="show" class="bg-clip-text text-transparent bg-gradient-to-l from-[--text-color-light] to-[--green] font-bold text-3xl sm:text-4xl select-none">Vue.animate</div>
+          <div v-if="show" class="bg-clip-text text-transparent bg-gradient-to-r from-[--text-color-light] to-[--green] font-bold text-3xl sm:text-4xl select-none">Animate4vue</div>
       </Transition>
     </div>
     
