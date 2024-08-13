@@ -31,7 +31,6 @@ Traditional CSS animations often struggle with performance issues, especially on
 - **🌳 Tree-Shaking:** Includes only the animations you use, keeping your bundle size minimal.
 - **🔄 Fine-grained Control:** Offer callbacks for animation state, and asynchronous handling.
 </details>
-
 <br>
 
 ## Live Demo
