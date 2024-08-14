@@ -64,7 +64,7 @@ onMounted(() => {
       </div>
       
       <div class="text-center font-semibold">
-        <p class="text-base xl:text-xl font-bold mb-1">Get started using Vue.animate</p>
+        <p class="text-base xl:text-xl font-bold mb-1">Get started using Animate4vue</p>
         <div class="flex justify-center text-[--green] dark:text-[--green-d] text-sm xs:text-base">
           <a href="https://www.npmjs.com/package/animate4vue" class="mr-3">NPM Repository</a>
           <a href="https://github.com/artisticLogicMK/animate4vue">Github Repository</a>
