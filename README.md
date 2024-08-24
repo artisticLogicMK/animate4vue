@@ -72,6 +72,7 @@ import { puffIn, puffOut } from 'animate4vue';
 ![demo3](https://github.com/artisticLogicMK/animate4vue/blob/master/md_assets/demo3.gif)
 
 > Elements should be conditionally displayed using v-if for animations to work.
+
 > Make sure there are no animations or CSS transitions applied or conflicting with elements to animate, they might interfere and mess things up. For example, avoid specifying CSS transitions globally.
 
 You may use the `<TransitionGroup>` for animating multiple elements as they enter and leave the DOM:
@@ -154,7 +155,7 @@ zoomIn(el, done).then(() => console.log('Success'))
 | ----------------------- | :---------: | ------ | ------- |
 | [duration](#duration)   | `0.4`  | `number` | `{duration: 2}`, `data-av-duration="2"`` |
 | [delay](#delay)   | `0`  | `number` | `{delay: 1}`, `data-av-delay="1"` |
-| [fade](#fade)   | `0.1` | `number` \| `boolean` | `{fade: 0.5}`, `data-av-fade="1"`` |
+| [fade](#fade)   | `0.1` | `number` | `{fade: 0.5}`, `data-av-fade="1"`` |
 | [ease](#ease)   | `"ease"`  | `string` | `{ease: "linear"}`, `data-av-ease="backOut"` |
 | [offset](#offset)   | `"100%"` of element's width  | `string` | `{offset: "150px"}`, `data-av-offset="150px"` |
 | [onStart](#onstart)   | `undefined`  | `function` | `{onStart: ()=> action()}` |
@@ -178,7 +179,7 @@ zoomIn(el, done).then(() => console.log('Success'))
 > Delay before the animation starts in seconds. Numbers below 0 denotes milliseconds(e.g 0.3).
 
 #### fade
-- **type:** `number` | `boolean`
+- **type:** `number`
 - _default:_ `0.1`
 
 > Indicates the starting opacity (for 'enter' animations) and ending opacity (for 'leaving' animations). Accepts `0` to `1`. e.g. `0.5`
@@ -276,7 +277,7 @@ const animateIn = (el, done) => {
 </template>
 ```
 
-👆 In this example, only the data-av-delay option from dataset attributes will be applied, as the duration and ease options are specified in the function call.
+👆 In this example, only the data-av-delay option from dataset attributes will be applied, as the duration and ease options are specified in the function invocation.
 
 
 ## Animations
@@ -473,6 +474,8 @@ const animateIn = (el, done) => {
     - `"leave"`: For animations when the element is leaving.
 - **config**
   - Configuration object for the animation. Accepts any GSAP properties, if you're familiar with GSAP then fire on!
+
+> Keep in mind that the animation properties defined for 'enter' dictate how the element appears when it enters, while those specified for 'leave' determine how it disappears.
 
 ### Asynchronous Support
 The `customAnimation()` method returns a Promise, allowing you to use await or .then().catch() for asynchronous operations:

@@ -75,7 +75,7 @@ const animate = (
           return easings[selectedEase as keyof typeof easings]
         } else {
           // Log an error if the easing option is invalid and return the default 'ease' value
-          console.error(`Vuenimate: Invalid ease:${selectedEase}. Accepts: ${Object.keys(easings).join(', ')}`)
+          console.error(`Animate4vue: Invalid ease:${selectedEase}. Accepts: ${Object.keys(easings).join(', ')}`)
           return easings.ease
         }
       }
@@ -88,9 +88,6 @@ const animate = (
         ...properties
       }
       
-      // delete unneeded properties
-      delete allProperties.fade
-      
       // Initialize timeline animation of element
       const timeline = gsap.timeline()
     
@@ -99,7 +96,7 @@ const animate = (
         // Animate from the target state to the default state (e.g. fade in)
         timeline.from(target, {
           ...allProperties,
-          ease: (options.ease && setEase(options.ease)) || setEase(data.avEnterEase) || properties?.ease
+          ease: (options.ease && setEase(options.ease)) || setEase(data.avEnterEase) || setEase(data.avEase) || properties?.ease
         })
         .to(target, { onComplete: ()=> {
             done() // Let vue know animation is complete
@@ -110,7 +107,7 @@ const animate = (
         // Animate to the end state (e.g., fade out)
         timeline.to(target, {
           ...allProperties,
-          ease: (options.ease && setEase(options.ease)) || setEase(data.avLeaveEase) || properties?.ease
+          ease: (options.ease && setEase(options.ease)) || setEase(data.avLeaveEase) || setEase(data.avEase) || properties?.ease
         })
         .to(target, {
           onStart: ()=> done(), // Let vue know animation is complete
@@ -119,7 +116,7 @@ const animate = (
       }
 
     } catch (err) {
-      reject('Animate.vue: ' + err)
+      reject('Animate4vue: ' + err)
     }
     
   })

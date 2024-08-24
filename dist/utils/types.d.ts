@@ -8,8 +8,8 @@ export interface Options {
     duration?: number;
     /** Delay before the animation starts, in seconds. */
     delay?: number;
-    /** Indicator wether the animation should have fade effect or not. */
-    fade?: boolean | number;
+    /** Indicates the enter and leave opacity of the animation. 0 to 1. */
+    fade?: number;
     /** Easing of the animation. Accepts: linear, easeIn, easeOut, ease, bounceIn, bounceOut, bounce, backIn, backOut, back, elasticIn, elasticOut, elastic */
     ease?: string;
     /**
