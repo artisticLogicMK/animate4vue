@@ -55,9 +55,9 @@ yarn add animate4vue
 
 ## Usage
 ---
-There are two primary ways to integrate animations into your Vue component:
-### 1. Using Vue's Transitions Components.
-`<Transition>` for animating single elements:
+Animate4vue seamlessly integrates with Vue's `<Transition>` and `<TransitionGroup>` components, giving you the flexibility to add animations with ease. There are two primary methods for incorporating animations with these components:
+### 1. Through direct invocation.
+This involves applying animations directly by hooking into the lifecycle events of Transition components. Here’s how you can do it:
 ```html
 <script setup>
 import { puffIn, puffOut } from 'animate4vue';
@@ -74,14 +74,14 @@ import { puffIn, puffOut } from 'animate4vue';
 > Elements should be conditionally displayed using v-if for animations to work.
 > Make sure there are no animations or CSS transitions applied or conflicting with elements to animate, they might interfere and mess things up. For example, avoid specifying CSS transitions globally.
 
-`<TransitionGroup>` for animating multiple elements as they enter and leave the DOM:
+You may use the `<TransitionGroup>` for animating multiple elements as they enter and leave the DOM:
 ```html
   <TransitionGroup @enter="slideInRight" @leave="slideInLeft">
     <li v-for="item in list">....</li>
   </TransitionGroup>
 ```
 
-Using the Vue Transitions method you can specify animation options by setting dataset attributes like so:
+Through 'direct invocation,' you can specify animation options by setting dataset attributes like so:
 ```html
   <Transition @enter="flipInHorizontalLeft" @leave="zoomOutLeft">
     <div v-if="show" data-av-leave-ease="backIn" data-av-offset="100%" ...>....</div>
@@ -92,7 +92,8 @@ Using the Vue Transitions method you can specify animation options by setting da
 > Options using dataset attributes apply to both @enter and @leave animations except [data-vn-enter-ease](#enterease) and [data-vn-leave-ease](leaveease).
 
 
-### 2. Through function call.
+### 2. Through function invocation.
+This method involves handling animations within the `<script>`, offering greater control, such as adding fallbacks and handling `async` operations.
 ```html
 <script setup>
 import { zoomIn, zoomOut } from 'animate4vue';
@@ -117,7 +118,7 @@ const animateOut = (el, done) => {
 
 > Always pass the done as a second argument, needed to tell Vue to remove the element out the DOM when animation is finished.
 
-When using function calls, you can pass options as a configuration object to the third parameter of the animation:
+When using function invocation, you can pass options as a configuration object to the third parameter of the animation:
 ```javascript
 const animateIn = (el, done) => {
   zoomIn(el, done, {
@@ -128,7 +129,6 @@ const animateIn = (el, done) => {
   })
 }
 ```
-> Only function calls support callbacks.
 
 All animations return a Promise and support asynchronous operations with await and .then().catch():
 ```javascript
@@ -142,6 +142,8 @@ zoomIn(el, done).then(() => console.log('Success'))
 .catch((error) => console.log(error))
 ```
 <small>[See all animations](#animations)</small>
+
+
 
 
 ## Options
