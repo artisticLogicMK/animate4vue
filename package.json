@@ -1,6 +1,6 @@
 {
   "name": "animate4vue",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A library for ready-to-use animations designed for Vue.js applications, featuring over 100 high-performance UI animations crafted with GSAP, offering GPU-accelerated rendering with better performance and efficiency across all devices.",
   "main": "dist/index.esm.js",
   "types": "dist/index.d.ts",

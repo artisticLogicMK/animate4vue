@@ -6,7 +6,7 @@ const openOptions = {
 }
 
 // entrance animations
-const openTopRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const openTopRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, {
     ...openOptions,
     transformOrigin: "top right",
@@ -14,7 +14,7 @@ const openTopRight = (target: any, done: (() => void), options: Options): Promis
   })
 }
 
-const openTopLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const openTopLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, {
     ...openOptions,
     transformOrigin: "top left",
@@ -22,7 +22,7 @@ const openTopLeft = (target: any, done: (() => void), options: Options): Promise
   })
 }
 
-const openBottomRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const openBottomRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, {
     ...openOptions,
     transformOrigin: "bottom right",
@@ -30,7 +30,7 @@ const openBottomRight = (target: any, done: (() => void), options: Options): Pro
   })
 }
 
-const openBottomLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const openBottomLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, {
     ...openOptions,
     transformOrigin: "bottom left",
@@ -40,7 +40,7 @@ const openBottomLeft = (target: any, done: (() => void), options: Options): Prom
 
 
 // Leaving animations
-const closeTopRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const closeTopRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, {
     ...openOptions,
     transformOrigin: "top right",
@@ -48,7 +48,7 @@ const closeTopRight = (target: any, done: (() => void), options: Options): Promi
   })
 }
 
-const closeTopLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const closeTopLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, {
     ...openOptions,
     transformOrigin: "top left",
@@ -56,7 +56,7 @@ const closeTopLeft = (target: any, done: (() => void), options: Options): Promis
   })
 }
 
-const closeBottomRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const closeBottomRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, {
     ...openOptions,
     transformOrigin: "bottom right",
@@ -64,7 +64,7 @@ const closeBottomRight = (target: any, done: (() => void), options: Options): Pr
   })
 }
 
-const closeBottomLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const closeBottomLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, {
     ...openOptions,
     transformOrigin: "bottom left",

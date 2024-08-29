@@ -12,12 +12,12 @@ const textOptions = {
 }
 
 // entrance animations
-const textIn = (target: any, done: (() => void), options: Options): Promise<void> => {
+const textIn = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, textOptions)
 }
 
 // leaving animations
-const textOut = (target: any, done: (() => void), options: Options): Promise<void> => {
+const textOut = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, textOptions)
 }
 

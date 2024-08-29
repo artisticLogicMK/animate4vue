@@ -2,7 +2,7 @@ import ConstructAnimation from './constructAnimation'
 import { AttentionOptions } from '../../utils/types'
 import { isValidAttOptions } from '../../utils/runtimeChecks'
 
-export function jello(element: any, options: AttentionOptions) {
+export function jello(element: HTMLElement | any, options: AttentionOptions) {
   
   options = {...options}
   

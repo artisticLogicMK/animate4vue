@@ -5,7 +5,7 @@ class ConstructAnimation {
   private element: any
   private options: object
   
-  constructor(element: any, options: object) {
+  constructor(element: HTMLElement | any, options: object) {
     this.element = element
     this.options = options
     this.animation = gsap.to(element, options)

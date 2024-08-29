@@ -60,20 +60,18 @@ var animate = function (direction, target, done, options, properties) {
                 }
                 else {
                     // Log an error if the easing option is invalid and return the default 'ease' value
-                    console.error("Vuenimate: Invalid ease:".concat(selectedEase, ". Accepts: ").concat(Object.keys(easings).join(', ')));
+                    console.error("Animate4vue: Invalid ease:".concat(selectedEase, ". Accepts: ").concat(Object.keys(easings).join(', ')));
                     return easings.ease;
                 }
             };
             // Merge default options with provided options and additional properties
             var allProperties = __assign(__assign(__assign(__assign({}, defOptions), options), { opacity: parseFloat(fadeOption) || defOptions.opacity }), properties);
-            // delete unneeded properties
-            delete allProperties.fade;
             // Initialize timeline animation of element
             var timeline = gsap.timeline();
             // Perform the animation based on the direction ('in(enter)' or 'out(leave')
             if (direction === 'in') { // Animation to enter
                 // Animate from the target state to the default state (e.g. fade in)
-                timeline.from(target, __assign(__assign({}, allProperties), { ease: (options.ease && setEase(options.ease)) || setEase(data.avEnterEase) || (properties === null || properties === void 0 ? void 0 : properties.ease) }))
+                timeline.from(target, __assign(__assign({}, allProperties), { ease: (options.ease && setEase(options.ease)) || setEase(data.avEnterEase) || setEase(data.avEase) || (properties === null || properties === void 0 ? void 0 : properties.ease) }))
                     .to(target, { onComplete: function () {
                         done(); // Let vue know animation is complete
                         resolve(); // Resolve promise
@@ -82,7 +80,7 @@ var animate = function (direction, target, done, options, properties) {
             }
             else { // animation to leave
                 // Animate to the end state (e.g., fade out)
-                timeline.to(target, __assign(__assign({}, allProperties), { ease: (options.ease && setEase(options.ease)) || setEase(data.avLeaveEase) || (properties === null || properties === void 0 ? void 0 : properties.ease) }))
+                timeline.to(target, __assign(__assign({}, allProperties), { ease: (options.ease && setEase(options.ease)) || setEase(data.avLeaveEase) || setEase(data.avEase) || (properties === null || properties === void 0 ? void 0 : properties.ease) }))
                     .to(target, {
                     onStart: function () { return done(); }, // Let vue know animation is complete
                     onComplete: function () { return resolve(); } // Resolve promise
@@ -90,7 +88,7 @@ var animate = function (direction, target, done, options, properties) {
             }
         }
         catch (err) {
-            reject('Animate.vue: ' + err);
+            reject('Animate4vue: ' + err);
         }
     });
 };

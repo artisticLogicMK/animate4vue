@@ -107,7 +107,7 @@ const animateOut = (el, done) => {
   zoomOut(el, done)
 }
 
-// The 'done' argument is used to signal Vue about the animation state and trigger appropriate actions.
+// The 'done' argument is used to signal Vue about the animation state and then update the DOM.
 </script>
 
 <template>
@@ -129,6 +129,20 @@ const animateIn = (el, done) => {
     onComplete: () => alert('Done!)
   })
 }
+```
+> Function invocation also support setting options through dataset attributes in template.
+
+Vue's transition components also provide a range of callback events, giving you finer control over the animation lifecycle. These include events like before-enter, after-enter, enter-cancelled, before-leave, after-leave, and leave-cancelled. Here's an example of how to use these callbacks:
+```html
+<script setup>
+const animationEnded = (el) => {
+  console.log('Animation is finished!')
+}
+</script>
+
+<template>
+  <Transition @enter="vanishIn" @after-enter="animationEnded"></Transition>
+</template>
 ```
 
 All animations return a Promise and support asynchronous operations with await and .then().catch():
@@ -161,7 +175,7 @@ zoomIn(el, done).then(() => console.log('Success'))
 | [onStart](#onstart)   | `undefined`  | `function` | `{onStart: ()=> action()}` |
 | [onComplete](#oncomplete)   | `undefined` | `function` | `{onComplete: ()=> action()}` |
 | [data-av-enter-ease](#data-av-enter-ease)   | `"ease"`  | `string` | `data-av-enter-ease="bounceIn"` |
-| [data-av-leave-ease](#data-av-leave-ease)   | `"ease"`  | `string` | `data-av-leave-ease="elasticIn"` |
+| [data-av-leave-ease](#data-av-leave-ease)  | `"ease"` | `string` | `data-av-leave-ease="elasticIn"` |
 
 ### Details
 

@@ -5,7 +5,7 @@ import { isValidOptions } from './runtimeChecks'
 // Function to perform animations with GSAP
 const animate = (
   direction: string,
-  target: any,
+  target: HTMLElement | any,
   done: (() => void),
   options: Options = {},
   properties?: Record<ExcludedOptionsKeys, any>

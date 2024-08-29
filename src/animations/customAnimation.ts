@@ -1,7 +1,7 @@
 import { gsap } from 'gsap'
 
 const customAnimation = (
-  target: any,
+  target: HTMLElement | any,
   done: (() => void),
   direction: "enter" | "leave",
   config: object

@@ -2,7 +2,7 @@ declare class ConstructAnimation {
     private animation;
     private element;
     private options;
-    constructor(element: any, options: object);
+    constructor(element: HTMLElement | any, options: object);
     kill(): this;
 }
 export default ConstructAnimation;

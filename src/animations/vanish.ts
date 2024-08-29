@@ -8,11 +8,11 @@ const vanishOptions = {
   duration: 0.65
 }
 
-const vanishIn = (target: any, done: (() => void), options: Options): Promise<void> => {
+const vanishIn = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, vanishOptions)
 }
 
-const vanishOut = (target: any, done: (() => void), options: Options): Promise<void> => {
+const vanishOut = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, { ...vanishOptions, filter: "blur(20px)"})
 }
 

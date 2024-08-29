@@ -26,6 +26,8 @@ import { swing } from './animations/attentionSeekers/swing'
 import { tada } from './animations/attentionSeekers/tada'
 import { wobble } from './animations/attentionSeekers/wobble'
 import { heartBeat } from './animations/attentionSeekers/heartBeat'
+import { puff } from './animations/attentionSeekers/puff'
+import { spin } from './animations/attentionSeekers/spin'
 
 export {
   // Customize
@@ -71,5 +73,5 @@ export {
   textIn, textOut,
   
   // Attention seekers
-  jello, bounce, pulse, flash, rubberBand, headShake, shakeHorizontal, shakeVertical, swing, tada, wobble, heartBeat
+  puff, jello, bounce, spin, pulse, flash, rubberBand, headShake, shakeHorizontal, shakeVertical, swing, tada, wobble, heartBeat
 }

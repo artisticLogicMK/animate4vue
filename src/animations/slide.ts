@@ -3,35 +3,35 @@ import { Options } from '../utils/types'
 import setOffset from '../utils/setOffset'
 
 // entrance animations
-const slideInRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const slideInRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     x: offset ? `${offset}` : '100%'
   })
 }
 
-const slideInLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const slideInLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     x: offset ? `-${offset}` : '-100%'
   })
 }
 
-const slideInTop = (target: any, done: (() => void), options: Options): Promise<void> => {
+const slideInTop = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     y: offset ? `-${offset}` : '-100%'
   })
 }
 
-const slideInBottom = (target: any, done: (() => void), options: Options): Promise<void> => {
+const slideInBottom = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     y: offset ? `${offset}` : '100%'
   })
 }
 
-const slideInTopRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const slideInTopRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     y: offset ? `-${offset}` : '-100%',
@@ -39,7 +39,7 @@ const slideInTopRight = (target: any, done: (() => void), options: Options): Pro
   })
 }
 
-const slideInTopLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const slideInTopLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     y: offset ? `-${offset}` : '-100%',
@@ -47,7 +47,7 @@ const slideInTopLeft = (target: any, done: (() => void), options: Options): Prom
   })
 }
 
-const slideInBottomRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const slideInBottomRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     y: offset ? `${offset}` : '100%',
@@ -55,7 +55,7 @@ const slideInBottomRight = (target: any, done: (() => void), options: Options): 
   })
 }
 
-const slideInBottomLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const slideInBottomLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     y: offset ? `${offset}` : '100%',
@@ -66,35 +66,35 @@ const slideInBottomLeft = (target: any, done: (() => void), options: Options): P
 
 
 // leaving animations
-const slideOutRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const slideOutRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     x: offset ? `${offset}` : '100%'
   })
 }
 
-const slideOutLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const slideOutLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     x: offset ? `-${offset}` : '-100%'
   })
 }
 
-const slideOutTop = (target: any, done: (() => void), options: Options): Promise<void> => {
+const slideOutTop = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     y: offset ? `-${offset}` : '-100%'
   })
 }
 
-const slideOutBottom = (target: any, done: (() => void), options: Options): Promise<void> => {
+const slideOutBottom = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     y: offset ? `${offset}` : '100%'
   })
 }
 
-const slideOutTopRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const slideOutTopRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     y: offset ? `-${offset}` : '-100%',
@@ -102,7 +102,7 @@ const slideOutTopRight = (target: any, done: (() => void), options: Options): Pr
   })
 }
 
-const slideOutTopLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const slideOutTopLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     y: offset ? `-${offset}` : '-100%',
@@ -110,7 +110,7 @@ const slideOutTopLeft = (target: any, done: (() => void), options: Options): Pro
   })
 }
 
-const slideOutBottomRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const slideOutBottomRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     y: offset ? `${offset}` : '100%',
@@ -118,7 +118,7 @@ const slideOutBottomRight = (target: any, done: (() => void), options: Options):
   })
 }
 
-const slideOutBottomLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const slideOutBottomLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     y: offset ? `${offset}` : '100%',

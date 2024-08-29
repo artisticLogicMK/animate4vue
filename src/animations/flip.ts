@@ -10,99 +10,99 @@ const flip = (direction: string): object => {
   }
 }
 
-const flipInHorizontal = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipInHorizontal = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, flip('horizontal'))
 }
 
-const flipOutHorizontal = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipOutHorizontal = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, flip('horizontal'))
 }
 
-const flipInVertical = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipInVertical = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, flip('vertical'))
 }
 
-const flipOutVertical = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipOutVertical = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, flip('vertical'))
 }
 
-const flipInHorizontalRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipInHorizontalRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, Object.assign(flip('horizontal'), { x: offset ? `${offset}` : '100%' }))
 }
 
-const flipInHorizontalLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipInHorizontalLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, Object.assign(flip('horizontal'), { x: offset ? `-${offset}` : '-100%' }))
 }
 
-const flipInHorizontalTop = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipInHorizontalTop = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, Object.assign(flip('horizontal'), { y: offset ? `-${offset}` : '-100%' }))
 }
 
-const flipInHorizontalBottom = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipInHorizontalBottom = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, Object.assign(flip('horizontal'), { y: offset ? `${offset}` : '100%' }))
 }
 
-const flipOutHorizontalRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipOutHorizontalRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, Object.assign(flip('horizontal'), { x: offset ? `${offset}` : '100%' }))
 }
 
-const flipOutHorizontalLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipOutHorizontalLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, Object.assign(flip('horizontal'), { x: offset ? `-${offset}` : '-100%' }))
 }
 
-const flipOutHorizontalTop = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipOutHorizontalTop = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, Object.assign(flip('horizontal'), { y: offset ? `-${offset}` : '-100%' }))
 }
 
-const flipOutHorizontalBottom = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipOutHorizontalBottom = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, Object.assign(flip('horizontal'), { y: offset ? `${offset}` : '100%' }))
 }
 
 // flip verticals
-const flipInVerticalRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipInVerticalRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, Object.assign(flip('vertical'), { x: offset ? `-${offset}` : '100%' }))
 }
 
-const flipInVerticalLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipInVerticalLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, Object.assign(flip('vertical'), { x: offset ? `-${offset}` : '-100%' }))
 }
 
-const flipInVerticalTop = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipInVerticalTop = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, Object.assign(flip('vertical'), { y: offset ? `-${offset}` : '-100%' }))
 }
 
-const flipInVerticalBottom = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipInVerticalBottom = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, Object.assign(flip('vertical'), { y: offset ? `${offset}` : '100%' }))
 }
 
-const flipOutVerticalRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipOutVerticalRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, Object.assign(flip('vertical'), { x: offset ? `${offset}` : '100%' }))
 }
 
-const flipOutVerticalLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipOutVerticalLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, Object.assign(flip('vertical'), { x: offset ? `-${offset}` : '-100%' }))
 }
 
-const flipOutVerticalTop = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipOutVerticalTop = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, Object.assign(flip('vertical'), { y: offset ? `-${offset}` : '-100%' }))
 }
 
-const flipOutVerticalBottom = (target: any, done: (() => void), options: Options): Promise<void> => {
+const flipOutVerticalBottom = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, Object.assign(flip('vertical'), { y: offset ? `${offset}` : '100%' }))
 }

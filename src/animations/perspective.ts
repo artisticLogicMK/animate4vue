@@ -23,37 +23,37 @@ const bottomOptions = {
 }
 
 // entrance animations
-const perspectiveInRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const perspectiveInRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, rightOptions)
 }
 
-const perspectiveInLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const perspectiveInLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, leftOptions)
 }
 
-const perspectiveInTop = (target: any, done: (() => void), options: Options): Promise<void> => {
+const perspectiveInTop = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, topOptions)
 }
 
-const perspectiveInBottom = (target: any, done: (() => void), options: Options): Promise<void> => {
+const perspectiveInBottom = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, bottomOptions)
 }
 
 
 // leaving animations
-const perspectiveOutRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const perspectiveOutRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, rightOptions)
 }
 
-const perspectiveOutLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const perspectiveOutLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, leftOptions)
 }
 
-const perspectiveOutTop = (target: any, done: (() => void), options: Options): Promise<void> => {
+const perspectiveOutTop = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, topOptions)
 }
 
-const perspectiveOutBottom = (target: any, done: (() => void), options: Options): Promise<void> => {
+const perspectiveOutBottom = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, bottomOptions)
 }
 

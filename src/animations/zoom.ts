@@ -3,11 +3,11 @@ import { Options } from '../utils/types'
 import setOffset from '../utils/setOffset'
 
 // entrance animations
-const zoomIn = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomIn = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, { scale: 0 })
 }
 
-const zoomInRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomInRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     scale: 0,
@@ -15,7 +15,7 @@ const zoomInRight = (target: any, done: (() => void), options: Options): Promise
   })
 }
 
-const zoomInLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomInLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     scale: 0,
@@ -23,7 +23,7 @@ const zoomInLeft = (target: any, done: (() => void), options: Options): Promise<
   })
 }
 
-const zoomInTop = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomInTop = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     scale: 0,
@@ -31,7 +31,7 @@ const zoomInTop = (target: any, done: (() => void), options: Options): Promise<v
   })
 }
 
-const zoomInBottom = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomInBottom = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     scale: 0,
@@ -39,7 +39,7 @@ const zoomInBottom = (target: any, done: (() => void), options: Options): Promis
   })
 }
 
-const zoomInTopRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomInTopRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     scale: 0,
@@ -48,7 +48,7 @@ const zoomInTopRight = (target: any, done: (() => void), options: Options): Prom
   })
 }
 
-const zoomInTopLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomInTopLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     scale: 0,
@@ -57,7 +57,7 @@ const zoomInTopLeft = (target: any, done: (() => void), options: Options): Promi
   })
 }
 
-const zoomInBottomRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomInBottomRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     scale: 0,
@@ -66,7 +66,7 @@ const zoomInBottomRight = (target: any, done: (() => void), options: Options): P
   })
 }
 
-const zoomInBottomLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomInBottomLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     scale: 0,
@@ -78,11 +78,11 @@ const zoomInBottomLeft = (target: any, done: (() => void), options: Options): Pr
 
 
 // leaving animations
-const zoomOut = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomOut = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, { scale: 0 })
 }
 
-const zoomOutRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomOutRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     scale: 0,
@@ -90,7 +90,7 @@ const zoomOutRight = (target: any, done: (() => void), options: Options): Promis
   })
 }
 
-const zoomOutLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomOutLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     scale: 0,
@@ -98,7 +98,7 @@ const zoomOutLeft = (target: any, done: (() => void), options: Options): Promise
   })
 }
 
-const zoomOutTop = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomOutTop = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     scale: 0,
@@ -106,7 +106,7 @@ const zoomOutTop = (target: any, done: (() => void), options: Options): Promise<
   })
 }
 
-const zoomOutBottom = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomOutBottom = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     scale: 0,
@@ -114,7 +114,7 @@ const zoomOutBottom = (target: any, done: (() => void), options: Options): Promi
   })
 }
 
-const zoomOutTopRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomOutTopRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     scale: 0,
@@ -123,7 +123,7 @@ const zoomOutTopRight = (target: any, done: (() => void), options: Options): Pro
   })
 }
 
-const zoomOutTopLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomOutTopLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     scale: 0,
@@ -132,7 +132,7 @@ const zoomOutTopLeft = (target: any, done: (() => void), options: Options): Prom
   })
 }
 
-const zoomOutBottomRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomOutBottomRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     scale: 0,
@@ -141,7 +141,7 @@ const zoomOutBottomRight = (target: any, done: (() => void), options: Options): 
   })
 }
 
-const zoomOutBottomLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const zoomOutBottomLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     scale: 0,

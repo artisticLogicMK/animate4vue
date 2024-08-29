@@ -3,7 +3,7 @@ import { Options } from '../utils/types'
 import setOffset from '../utils/setOffset'
 
 // entrance animations
-const skewInRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const skewInRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     skewX: 30,
@@ -12,7 +12,7 @@ const skewInRight = (target: any, done: (() => void), options: Options): Promise
   })
 }
 
-const skewInLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const skewInLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('in', target, done, options, {
     skewX: -30,
@@ -23,7 +23,7 @@ const skewInLeft = (target: any, done: (() => void), options: Options): Promise<
 
 
 // leaving animations
-const skewOutRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const skewOutRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     skewX: 30,
@@ -32,7 +32,7 @@ const skewOutRight = (target: any, done: (() => void), options: Options): Promis
   })
 }
 
-const skewOutLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const skewOutLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   const offset = setOffset(target, options)
   return animate('out', target, done, options, {
     skewX: -30,

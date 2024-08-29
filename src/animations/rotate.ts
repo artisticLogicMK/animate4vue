@@ -2,29 +2,29 @@ import animate from '../utils/animate'
 import { Options } from '../utils/types'
 
 // entrance animations
-const rotateIn = (target: any, done: (() => void), options: Options): Promise<void> => {
+const rotateIn = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, { scale: 0, rotationZ: -200 })
 }
 
-const rotateInBottomLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const rotateInBottomLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, {
     rotationZ: -45
   })
 }
 
-const rotateInBottomRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const rotateInBottomRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, {
     rotationZ: 45,
   })
 }
 
-const rotateInTopLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const rotateInTopLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, {
     rotationZ: 45,
   })
 }
 
-const rotateInTopRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const rotateInTopRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('in', target, done, options, {
     rotationZ: -90,
   })
@@ -32,29 +32,29 @@ const rotateInTopRight = (target: any, done: (() => void), options: Options): Pr
 
 
 // leaving animations
-const rotateOut = (target: any, done: (() => void), options: Options): Promise<void> => {
+const rotateOut = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, { scale: 0, rotationZ: -200 })
 }
 
-const rotateOutBottomLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const rotateOutBottomLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, {
     rotationZ: -45
   })
 }
 
-const rotateOutBottomRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const rotateOutBottomRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, {
     rotationZ: 45
   })
 }
 
-const rotateOutTopLeft = (target: any, done: (() => void), options: Options): Promise<void> => {
+const rotateOutTopLeft = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, {
     rotationZ: 45
   })
 }
 
-const rotateOutTopRight = (target: any, done: (() => void), options: Options): Promise<void> => {
+const rotateOutTopRight = (target: HTMLElement | any, done: (() => void), options: Options): Promise<void> => {
   return animate('out', target, done, options, {
     rotationZ: -90
   })
