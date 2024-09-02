@@ -9,7 +9,7 @@ const att = ref('swing')
 const loop = ref(false)
 
 const animations = [
-  'swing', 'jello', 'bounce', 'pulse', 'flash', 'rubberBand', 'headShake',
+  'puff', 'swing', 'jello', 'spin', 'bounce', 'pulse', 'flash', 'rubberBand', 'headShake',
   'shakeHorizontal', 'shakeVertical', 'tada', 'wobble', 'heartBeat'
 ]
 
