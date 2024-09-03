@@ -170,6 +170,7 @@ zoomIn(el, done).then(() => console.log('Success'))
 | [duration](#duration)   | `0.4`  | `number` | `{duration: 2}`, `data-av-duration="2"`` |
 | [delay](#delay)   | `0`  | `number` | `{delay: 1}`, `data-av-delay="1"` |
 | [fade](#fade)   | `0.1` | `number` | `{fade: 0.5}`, `data-av-fade="1"`` |
+| [blur](#blur)   | `0` | `number` | `{blur: 3}`, `data-av-blur="2"`` |
 | [ease](#ease)   | `"ease"`  | `string` | `{ease: "linear"}`, `data-av-ease="backOut"` |
 | [offset](#offset)   | `"100%"` of element's width  | `string` | `{offset: "150px"}`, `data-av-offset="150px"` |
 | [onStart](#onstart)   | `undefined`  | `function` | `{onStart: ()=> action()}` |
@@ -197,6 +198,12 @@ zoomIn(el, done).then(() => console.log('Success'))
 - _default:_ `0.1`
 
 > Indicates the starting opacity (for 'enter' animations) and ending opacity (for 'leaving' animations). Accepts `0` to `1`. e.g. `0.5`
+
+#### blur
+- **type:** `number`
+- _default:_ `0`
+
+> Applies a blur effect to the animation. The higher the value, the more pronounced the blur.
 
 #### ease
 - **type:** `string`
@@ -269,7 +276,7 @@ zoomIn(el, done).then(() => console.log('Success'))
 > Easing effect of the 'leave' animation when setting option through dataset attributes e.g data-av-leave-ease="backIn". [Easing values](#ease)
 
 #### Note:
-When using both function call and dataset options for an animation, remember that function call options take precedence. This means only the dataset attributes not covered by the function call will be applied. For instance:
+When using both function invocation and dataset options for an animation, remember that function invocation options take precedence. This means only the dataset attributes not covered by the function invocation will be applied. For instance:
 ```html
 <script setup>
 import { rollIn, rollOut } from 'animate4vue';
@@ -327,6 +334,9 @@ const animateIn = (el, done) => {
 
 - **Vanish animations**
   - vanishIn, vanishOut
+  
+- **Blur animations**
+  - blurIn, blurOut
 
 - **Perspective animations**
   - perspectiveInRight, perspectiveInLeft, perspectiveInTop, perspectiveInBottom, perspectiveOutRight, perspectiveOutLeft, perspectiveOutTop, perspectiveOutBottom
@@ -347,7 +357,8 @@ const animateIn = (el, done) => {
 Attention seekers are animations designed to grab users' attention, such as a ringing bell icon or shaking elements. These animations enhance user engagement and provide a compelling experience. Animate4vue offers a variety of dynamic attention-seeking animations to fit any scenario.
 
 ### Available Attention-Seeker Animations
-`jello`, `bounce`, `pulse`, `flash`, `rubberBand`, `headShake`, `shakeHorizontal`, `shakeVertical`, `swing`, `tada`, `wobble`, `heartBeat`
+`puff`, `jello`, `spin`, `bounce`, `pulse`, `flash`, `rubberBand`, `headShake`, `shakeHorizontal`, `shakeVertical`, `swing`, `tada`, `wobble`, `heartBeat`
+<small>More coming...</small>
 
 ### How To Use:
 ```html

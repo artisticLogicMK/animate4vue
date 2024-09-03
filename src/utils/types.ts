@@ -11,12 +11,20 @@ export interface Options {
   /** Indicates the enter and leave opacity of the animation. 0 to 1. */
   fade?: number;
   /** Easing of the animation. Accepts: linear, easeIn, easeOut, ease, bounceIn, bounceOut, bounce, backIn, backOut, back, elasticIn, elasticOut, elastic */
-  ease?: string,
+  ease?: string;
+  
   /**
     * Defines the initial distance from which the animation should begin/end.
     * Only applicable to animations involving movement in right, left, up & down.
   */
-  offset?: string,
+  offset?: string;
+  
+  /**
+    * Defines the intensity of the blur effect applied to the animation.
+    * A higher number results in a stronger blur.
+  */
+   blur?: number;
+   
   /** Callback function executed when the animation starts. */
   onStart?: () => void;
   /** Callback function executed when the animation completes. */

@@ -38,7 +38,3 @@ const animations = [
     <AttentionObject :attention="att" :loop="loop" />
   </div>
 </template>
-
-<style>
-
-</style>

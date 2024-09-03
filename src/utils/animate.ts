@@ -18,9 +18,9 @@ const animate = (
       const defOptions = {
         duration: 0.5,  // Duration of the animation in seconds
         opacity: 0.1, // Initial opacity value
-        //display: 'none' // Element on hide at initial/end state
         delay: 0, // Start the animation immediatey by default
-        ease: "power1.inOut"
+        ease: "power1.inOut", // Easing Function
+        filter: "blur(0px)" // blur effect
       }
       
       // Assign element dataset here
@@ -28,7 +28,9 @@ const animate = (
     
       // Check if there are any dataset attributes present on the target element
       if (Object.keys(data).length > 0) {
+        alert(typeof data.avDuration)
         // Create an options object with values from the dataset or fallback to default values if not present
+        // These are properties that must be passed as numbers to gsap
         const optionsData: Options = {
           duration: parseFloat(data.avDuration) || defOptions.duration,
           delay: parseFloat(data.avDelay) || defOptions.delay
@@ -44,7 +46,11 @@ const animate = (
         return
       }
       
+      // Define value for fade effect
       const fadeOption = options.fade || data.avFade
+      
+      // Define value for blur effect
+      const blurOption = `blur(${options.blur || data.avBlur}px)`
       
       // This func maps a custom easing name to a GSAP easing value.
       const setEase = (selectedEase: string): string => {
@@ -85,8 +91,13 @@ const animate = (
         ...defOptions,
         ...options,
         opacity: parseFloat(fadeOption) || defOptions.opacity,
+        filter: blurOption,
         ...properties
       }
+      
+      // Remove properties not needed
+      delete allProperties.fade
+      delete allProperties.blur
       
       // Initialize timeline animation of element
       const timeline = gsap.timeline()

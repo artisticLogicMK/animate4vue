@@ -28,6 +28,9 @@ import {
   // Puff
   puffIn, puffOut,
   
+  // Blur
+  blurIn, blurOut,
+  
   // Vanish
   vanishIn, vanishOut,
   
@@ -125,6 +128,8 @@ const animations = {
   rollOut: rollOut,
   puffIn: puffIn,
   puffOut: puffOut,
+  blurIn: blurIn,
+  blurOut: blurOut,
   vanishIn: vanishIn,
   vanishOut: vanishOut,
   perspectiveInRight: perspectiveInRight,

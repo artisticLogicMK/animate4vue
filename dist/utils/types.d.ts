@@ -17,6 +17,11 @@ export interface Options {
       * Only applicable to animations involving movement in right, left, up & down.
     */
     offset?: string;
+    /**
+      * Defines the intensity of the blur effect applied to the animation.
+      * A higher number results in a stronger blur.
+    */
+    blur?: number;
     /** Callback function executed when the animation starts. */
     onStart?: () => void;
     /** Callback function executed when the animation completes. */

@@ -57,6 +57,10 @@ const inAnimations = {
     name: 'Puff',
     animations: ['puffIn']
   },
+  blur: {
+    name: 'Blur',
+    animations: ['blurIn']
+  },
   vanish: {
     name: 'Vanish',
     animations: ['vanishIn']
@@ -127,6 +131,10 @@ const outAnimations = {
   puff: {
     name: 'Puff',
     animations: ['puffOut']
+  },
+  blur: {
+    name: 'Blur',
+    animations: ['blurOut']
   },
   vanish: {
     name: 'Vanish',

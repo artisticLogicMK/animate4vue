@@ -10,15 +10,17 @@ var animate = function (direction, target, done, options, properties) {
             var defOptions = {
                 duration: 0.5, // Duration of the animation in seconds
                 opacity: 0.1, // Initial opacity value
-                //display: 'none' // Element on hide at initial/end state
                 delay: 0, // Start the animation immediatey by default
-                ease: "power1.inOut"
+                ease: "power1.inOut", // Easing Function
+                filter: "blur(0px)" // blur effect
             };
             // Assign element dataset here
             var data = target.dataset;
             // Check if there are any dataset attributes present on the target element
             if (Object.keys(data).length > 0) {
+                alert(typeof data.avDuration);
                 // Create an options object with values from the dataset or fallback to default values if not present
+                // These are properties that must be passed as numbers to gsap
                 var optionsData = {
                     duration: parseFloat(data.avDuration) || defOptions.duration,
                     delay: parseFloat(data.avDelay) || defOptions.delay
@@ -31,7 +33,10 @@ var animate = function (direction, target, done, options, properties) {
                 console.error('Options object should only include: duration(number), fade(number), delay(number), ease(string), offset(string), onStart(func), and onComplete(func)');
                 return;
             }
+            // Define value for fade effect
             var fadeOption = options.fade || data.avFade;
+            // Define value for blur effect
+            var blurOption = "blur(".concat(options.blur || data.avBlur, "px)");
             // This func maps a custom easing name to a GSAP easing value.
             var setEase = function (selectedEase) {
                 // Define a mapping from custom easing names to GSAP easing values
@@ -65,7 +70,10 @@ var animate = function (direction, target, done, options, properties) {
                 }
             };
             // Merge default options with provided options and additional properties
-            var allProperties = __assign(__assign(__assign(__assign({}, defOptions), options), { opacity: parseFloat(fadeOption) || defOptions.opacity }), properties);
+            var allProperties = __assign(__assign(__assign(__assign({}, defOptions), options), { opacity: parseFloat(fadeOption) || defOptions.opacity, filter: blurOption }), properties);
+            // Remove properties not needed
+            delete allProperties.fade;
+            delete allProperties.blur;
             // Initialize timeline animation of element
             var timeline = gsap.timeline();
             // Perform the animation based on the direction ('in(enter)' or 'out(leave')

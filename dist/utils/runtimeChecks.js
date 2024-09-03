@@ -5,6 +5,7 @@ export var isValidOptions = function (options) {
         (options.duration === undefined || typeof options.duration === 'number') &&
         (options.delay === undefined || typeof options.delay === 'number') &&
         (options.fade === undefined || typeof options.fade === 'string' || typeof options.fade === 'number') &&
+        (options.blur === undefined || typeof options.blur === 'string' || typeof options.blur === 'number') &&
         (options.ease === undefined || typeof options.ease === 'string') &&
         (options.offset === undefined || typeof options.offset === 'string');
 };
