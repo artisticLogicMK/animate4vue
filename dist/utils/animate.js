@@ -18,7 +18,6 @@ var animate = function (direction, target, done, options, properties) {
             var data = target.dataset;
             // Check if there are any dataset attributes present on the target element
             if (Object.keys(data).length > 0) {
-                alert(typeof data.avDuration);
                 // Create an options object with values from the dataset or fallback to default values if not present
                 // These are properties that must be passed as numbers to gsap
                 var optionsData = {
