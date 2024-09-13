@@ -36,7 +36,6 @@ Traditional CSS animations often struggle with performance issues, especially on
 
 ## Live Demo
 ### [See all available animations in the demo](https://animate4vue.netlify.app)
----
 <br>
 
 ## Table of Contents
@@ -44,12 +43,12 @@ Traditional CSS animations often struggle with performance issues, especially on
 - [Usage](#usage)
   - [Through direct invocation](#1-through-direct-invocation)
     - [Animate on initial load](#animate-on-initial-load)
-    - [Setting Options](#setting-options-direct)
+    - [Setting Options](#setting-options)
   - [Through function invocation](#2-through-function-invocation)
-    - [Setting Options](#setting-options-function)
+    - [Setting Options](#specifying-options)
   - [Animate Multiple Elements](#animate-multiple-elements)
   - [Transition Events](#transition-events)
-  - [Asynchronous Support](#asynchronous-support-anim)
+  - [Asynchronous Support](#asynchronous-support)
 - [Options](#options)
   - [Summary](#summary)
   - [Details](#details)
@@ -57,12 +56,12 @@ Traditional CSS animations often struggle with performance issues, especially on
 - [Attention Seekers](#attention-seekers)
   - [Attention-Seeker Animations](#att-animations)
   - [How to use](#how-to-use)
-  - [Setting Options](#setting-options-att)
+  - [Connfiguring Options](#configuring-options)
   - [Attention Options](#attention-options)
   - [Stopping Attention Seekers](#stopping-attention-seekers)
 - [Custom Animation](#custom-animation)
   - [API](#api)
-  - [Asynchronous Support](#asynchronous-support-custom)
+  - [Asynchronous Support](#asynchronous-operation)
 - [Feedback](#feedback)
 - [License](#license)
 
@@ -112,7 +111,7 @@ To animate elements on initial load, use the `appear` directive to trigger anima
 </template>
 ```
 
-<h4 id="setting-options-direct">Setting Options</h4>
+#### Setting Options
 Through 'direct invocation,' you can specify animation options by setting dataset attributes like so:
 ```html
   <Transition @enter="flipInHorizontalLeft" @leave="zoomOutLeft" data-av-leave-ease="backIn" data-av-offset="100%">
@@ -154,7 +153,7 @@ const animateOut = (el, done) => {
 
 <p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
 
-<h4 id="setting-options-function">Setting Options</h4>
+#### Specifying Options
 When using function invocation, you can pass options as a configuration object to the third parameter of the animation:
 ```javascript
 const animateIn = (el, done) => {
@@ -193,7 +192,7 @@ const animationEnded = (el) => {
 ```
 <p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
 
-### Asynchronous Support <a id="asynchronous-support-anim"></a>
+### Asynchronous Support
 All animations return a Promise that resolves when the animation completes, allowing you to handle asynchronous operations using `await` or by chaining `.then()` and `.catch()`:
 ```javascript
 const animateIn = async (el, done) => {
@@ -207,7 +206,7 @@ zoomIn(el, done).then(() => console.log('Success'))
 ```
 <small>[See all animations](#animations)</small>
 <p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
-
+<br>
 
 
 ## Options
@@ -402,6 +401,7 @@ const animateIn = (el, done) => {
 
 [View live demo of animations](https://animate4vue.netlify.app)
 <p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
+<br>
 
 
 ## Attention Seekers
@@ -434,7 +434,7 @@ const ringBell = () => {
 
 ![demo1](https://github.com/artisticLogicMK/animate4vue/blob/master/md_assets/demo1.gif)
 
-### <h4 id="setting-options-att">Setting Options</h4>
+### Configuring Options
 You can pass options to customize the animation behavior. For example:
 ```javascript
 headShake(el, {
@@ -568,7 +568,7 @@ const animateIn = (el, done) => {
 
 <p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
 
-### Asynchronous Support <a id="asynchronous-support-custom"></a>
+### Asynchronous Operation
 The `customAnimation()` method returns a Promise that resolves when the animation is complete, allowing you to use `await` or chain `.then()` and `.catch()` for asynchronous operations:
 ```javascript
 const animateIn = async (el, done) => {
@@ -585,6 +585,7 @@ customAnimation(el, done, "leave", {
 .catch((error) => console.log('Animation Error:', error));
 ```
 <p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
+<br>
 
 
 ## Feedback
