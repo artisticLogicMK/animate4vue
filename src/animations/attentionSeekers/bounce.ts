@@ -1,16 +1,20 @@
 import ConstructAnimation from './constructAnimation'
 import { AttentionOptions } from '../../utils/types'
 import { isValidAttOptions } from '../../utils/runtimeChecks'
+import animationIsRunning from '../../utils/animationIsRunning'
 
 export function bounce(element: HTMLElement | any, options: AttentionOptions) {
   
   options = {...options}
   
-  // Validate l options object to ensure it contains only allowed properties
+  // Validate options object to ensure it contains only allowed properties
   if (!isValidAttOptions(options)) {
     console.error('Options object should only include: duration(number), delay(number), loop(boolean)')
     return
   }
+  
+  // Prevent starting a new animation if the current element is already animating
+  if (animationIsRunning(element)) return // exit
       
   return new ConstructAnimation(element, {
     keyframes: [

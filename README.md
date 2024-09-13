@@ -4,7 +4,7 @@
 </p>
 
 ---
-**Animate4vue** is a library for ready-to-use animations designed for Vue.js applications, featuring over 100 high-performance UI animations crafted with GSAP, offering GPU-accelerated rendering with better performance and efficiency across all devices, as well as callbacks and async handling. Unlike traditional CSS animation libraries that can be tasking and less efficient on low-end devices. Animate4vue make your animations look and feel flawless.
+**Animate4vue** is a library for ready-to-use animations designed for Vue.js applications, featuring over 100 high-performance UI animations crafted with GSAP, offering GPU-accelerated rendering with better performance and efficiency across all devices, as well as callbacks and async handling. Unlike traditional CSS animation libraries that can be tasking and less efficient on low-end devices, Animate4vue make your animations look and feel flawless.
 
 Offers TypeScript support, and tree-shaking, so only the animations you use are bundled, keeping your application lean and fast.
 
@@ -39,7 +39,32 @@ Traditional CSS animations often struggle with performance issues, especially on
 ---
 <br>
 
-[Installation](#installation) | [Usage](#usage) | [Options](#options) | [Animations](#animations) | [Attention Seekers](#attention-seekers) | [Custom Animation](#custom-animation) | [Feedback](#feedback) | [License](#license)
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Through direct invocation](#direct-invocation)
+    - [Animate on initial load](#animate-on-initial-load)
+    - [Setting Options](#setting-options-direct)
+  - [Through function invocation](#function-invocation)
+    - [Setting Options](#setting-options-function)
+  - [Animate Multiple Elements](#animate-multiple-elements)
+  - [Transition Events](#transition-events)
+  - [Asynchronous Support](#asynchronous-support-anim)
+- [Options](#options)
+  - [Summary](#summary)
+  - [Details](#details)
+- [Animations](#animations)
+- [Attention Seekers](#attention-seekers)
+  - [Attention-Seeker Animations](#att-animations)
+  - [How to use](#how-to-use)
+  - [Setting Options](#setting-options-att)
+  - [Attention Options](#attention-options)
+  - [Stopping Attention Seekers](#stopping-attention-seekers)
+- [Custom Animation](#custom-animation)
+  - [API](#api)
+  - [Asynchronous Support](#asynchronous-support-custom)
+- [Feedback](#feedback)
+- [License](#license)
 
 ## Installation
 
@@ -56,7 +81,7 @@ yarn add animate4vue
 ## Usage
 ---
 Animate4vue seamlessly integrates with Vue's `<Transition>` and `<TransitionGroup>` components, giving you the flexibility to add animations with ease. There are two primary methods for incorporating animations with these components:
-### 1. Through direct invocation.
+### 1. Through direct invocation
 This involves applying animations directly by hooking into the lifecycle events of Transition components. Here’s how you can do it:
 ```html
 <script setup>
@@ -71,21 +96,25 @@ import { puffIn, puffOut } from 'animate4vue';
 ```
 ![demo3](https://github.com/artisticLogicMK/animate4vue/blob/master/md_assets/demo3.gif)
 
-> Elements should be conditionally displayed using v-if for animations to work.
+> **Important**: Elements should be conditionally displayed using v-if for animations to work.
 
-> Make sure there are no animations or CSS transitions applied or conflicting with elements to animate, they might interfere and mess things up. For example, avoid specifying CSS transitions globally.
+> **Tip**: Make sure there are no animations or CSS transitions applied or conflicting with elements to animate, they might interfere and mess things up. For example, avoid specifying CSS transitions globally.
 
-You may use the `<TransitionGroup>` for animating multiple elements as they enter and leave the DOM:
+#### Animate on initial load
+To animate elements on initial load, use the `appear` directive to trigger animations without conditional rendering with `v-if`:
 ```html
-  <TransitionGroup @enter="slideInRight" @leave="slideInLeft">
-    <li v-for="item in list">....</li>
-  </TransitionGroup>
+<template>
+  <Transition appear @enter="zoomInLeft" @leave="zoomOutRight">
+    <div>....</div>
+  </Transition>
+</template>
 ```
 
+#### Setting Options <a id="setting-options-direct"></a>
 Through 'direct invocation,' you can specify animation options by setting dataset attributes like so:
 ```html
-  <Transition @enter="flipInHorizontalLeft" @leave="zoomOutLeft">
-    <div v-if="show" data-av-leave-ease="backIn" data-av-offset="100%" ...>....</div>
+  <Transition @enter="flipInHorizontalLeft" @leave="zoomOutLeft" data-av-leave-ease="backIn" data-av-offset="100%">
+    <div v-if="show">....</div>
   </Transition>
 ```
 ![demo4](https://github.com/artisticLogicMK/animate4vue/blob/master/md_assets/demo4.gif)
@@ -117,8 +146,11 @@ const animateOut = (el, done) => {
 </template>
 ```
 
-> Always pass the done as a second argument, needed to tell Vue to remove the element out the DOM when animation is finished.
+> **Important**: Always pass the done as a second argument, needed to tell Vue to remove the element out the DOM when animation is finished.
 
+<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
+
+#### Setting Options <a id="setting-options-function"></a>
 When using function invocation, you can pass options as a configuration object to the third parameter of the animation:
 ```javascript
 const animateIn = (el, done) => {
@@ -132,6 +164,17 @@ const animateIn = (el, done) => {
 ```
 > Function invocation also support setting options through dataset attributes in template.
 
+<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
+
+### Animate Multiple Elements
+You may use the `<TransitionGroup>` for animating multiple elements as they enter and leave the DOM:
+```html
+  <TransitionGroup @enter="slideInRight" @leave="slideInLeft">
+    <li v-for="item in list" :key="item">....</li>
+  </TransitionGroup>
+```
+
+### Transition Events
 Vue's transition components also provide a range of callback events, giving you finer control over the animation lifecycle. These include events like before-enter, after-enter, enter-cancelled, before-leave, after-leave, and leave-cancelled. Here's an example of how to use these callbacks:
 ```html
 <script setup>
@@ -144,8 +187,10 @@ const animationEnded = (el) => {
   <Transition @enter="vanishIn" @after-enter="animationEnded"></Transition>
 </template>
 ```
+<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
 
-All animations return a Promise and support asynchronous operations with await and .then().catch():
+### Asynchronous Support <a id="asynchronous-support-anim"></a>
+All animations return a Promise that resolves when the animation completes, allowing you to handle asynchronous operations using `await` or by chaining `.then()` and `.catch()`:
 ```javascript
 const animateIn = async (el, done) => {
   await zoomIn(el, done)
@@ -157,7 +202,7 @@ zoomIn(el, done).then(() => console.log('Success'))
 .catch((error) => console.log(error))
 ```
 <small>[See all animations](#animations)</small>
-
+<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
 
 
 
@@ -177,6 +222,8 @@ zoomIn(el, done).then(() => console.log('Success'))
 | [onComplete](#oncomplete)   | `undefined` | `function` | `{onComplete: ()=> action()}` |
 | [data-av-enter-ease](#data-av-enter-ease)   | `"ease"`  | `string` | `data-av-enter-ease="bounceIn"` |
 | [data-av-leave-ease](#data-av-leave-ease)  | `"ease"` | `string` | `data-av-leave-ease="elasticIn"` |
+
+<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
 
 ### Details
 
@@ -290,15 +337,14 @@ const animateIn = (el, done) => {
 </script>
 
 <template>
-  <Transition @enter="animateIn" @leave="rollOut">
-    <div v-if="show" data-av-duration="1" data-av-enter-ease="linear" data-av-delay="1">
-      ...
-    </div>
+  <Transition @enter="animateIn" @leave="rollOut" data-av-duration="1" data-av-enter-ease="linear" data-av-delay="1">
+    <div v-if="show">...</div>
   </Transition>
 </template>
 ```
 
 👆 In this example, only the data-av-delay option from dataset attributes will be applied, as the duration and ease options are specified in the function invocation.
+<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
 
 
 ## Animations
@@ -351,12 +397,13 @@ const animateIn = (el, done) => {
 <small>More coming...</small>
 
 [View live demo of animations](https://animate4vue.netlify.app)
+<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
 
 
 ## Attention Seekers
 Attention seekers are animations designed to grab users' attention, such as a ringing bell icon or shaking elements. These animations enhance user engagement and provide a compelling experience. Animate4vue offers a variety of dynamic attention-seeking animations to fit any scenario.
 
-### Available Attention-Seeker Animations
+### Available Attention-Seeker Animations <a id="att-animations"></a>
 `puff`, `jello`, `spin`, `bounce`, `pulse`, `flash`, `rubberBand`, `headShake`, `shakeHorizontal`, `shakeVertical`, `swing`, `tada`, `wobble`, `heartBeat`
 <small>More coming...</small>
 
@@ -383,6 +430,7 @@ const ringBell = () => {
 
 ![demo1](https://github.com/artisticLogicMK/animate4vue/blob/master/md_assets/demo1.gif)
 
+### Setting Options <a id="setting-options-att"></a>
 You can pass options to customize the animation behavior. For example:
 ```javascript
 headShake(el, {
@@ -420,10 +468,12 @@ headShake(el, {
 
 > Delay before the animation in seconds. Numbers below 0 denotes milliseconds(e.g 0.3). Also specify repeat delay of the animation when is on loop.
 
+<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
+
 ### Stopping Attention Seekers
 Attention seekers provide a `kill()` method to stop ongoing animations, especially when set to loop. This allows you to halt the animation at any time.
 
-### Example Usage:
+#### Example Usage:
 ```html
 <script setup>
 import { rubberBand } from 'animate4vue';
@@ -455,9 +505,17 @@ onMounted(() => {
 </template>
 ```
 ![demo2](https://github.com/artisticLogicMK/animate4vue/blob/master/md_assets/demo2.gif)
-> Attention seeker animations also work with <Transition @enter="jello"> events.
+> **Important**: Be cautious when triggering an animation, as it cannot be stopped once initiated if triggered multiple times.
+
+> **Important**: Additionally, a new animation cannot be started on an element that already has an ongoing animation.
+
+> **Tip**: Attention seeker animations also work with Transition component events. For example `@enter="jello"`.
+
+<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
 
 <br>
+
+
 
 ## Custom Animation
 Animate4vue offers a flexible `customAnimation` method, allowing you to define your own animations dynamically.
@@ -484,7 +542,9 @@ const animateIn = (el, done) => {
   </Transition>
 </template>
 ```
+<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
 
+### API
 ```customAnimation(element, done, direction, config)```
 
 **Parameters:**
@@ -502,8 +562,10 @@ const animateIn = (el, done) => {
 
 > Keep in mind that the animation properties defined for 'enter' dictate how the element appears when it enters, while those specified for 'leave' determine how it disappears.
 
-### Asynchronous Support
-The `customAnimation()` method returns a Promise, allowing you to use await or .then().catch() for asynchronous operations:
+<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
+
+### Asynchronous Support <a id="asynchronous-support-custom"></a>
+The `customAnimation()` method returns a Promise that resolves when the animation is complete, allowing you to use `await` or chain `.then()` and `.catch()` for asynchronous operations:
 ```javascript
 const animateIn = async (el, done) => {
   await customAnimation(el, done, "enter", {
@@ -518,6 +580,7 @@ customAnimation(el, done, "leave", {
 }).then(() => console.log('Animation Complete'))
 .catch((error) => console.log('Animation Error:', error));
 ```
+<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
 
 
 ## Feedback
