@@ -42,10 +42,10 @@ Traditional CSS animations often struggle with performance issues, especially on
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Through direct invocation](#direct-invocation)
+  - [Through direct invocation](#1-through-direct-invocation)
     - [Animate on initial load](#animate-on-initial-load)
     - [Setting Options](#setting-options-direct)
-  - [Through function invocation](#function-invocation)
+  - [Through function invocation](#2-through-function-invocation)
     - [Setting Options](#setting-options-function)
   - [Animate Multiple Elements](#animate-multiple-elements)
   - [Transition Events](#transition-events)
@@ -100,6 +100,8 @@ import { puffIn, puffOut } from 'animate4vue';
 
 > **Tip**: Make sure there are no animations or CSS transitions applied or conflicting with elements to animate, they might interfere and mess things up. For example, avoid specifying CSS transitions globally.
 
+<p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
+
 #### Animate on initial load
 To animate elements on initial load, use the `appear` directive to trigger animations without conditional rendering with `v-if`:
 ```html
@@ -110,7 +112,7 @@ To animate elements on initial load, use the `appear` directive to trigger anima
 </template>
 ```
 
-#### Setting Options <a id="setting-options-direct"></a>
+<h4 id="setting-options-direct">Setting Options</h4>
 Through 'direct invocation,' you can specify animation options by setting dataset attributes like so:
 ```html
   <Transition @enter="flipInHorizontalLeft" @leave="zoomOutLeft" data-av-leave-ease="backIn" data-av-offset="100%">
@@ -120,6 +122,8 @@ Through 'direct invocation,' you can specify animation options by setting datase
 ![demo4](https://github.com/artisticLogicMK/animate4vue/blob/master/md_assets/demo4.gif)
 `data-av-[option property]="..."`
 > Options using dataset attributes apply to both @enter and @leave animations except [data-vn-enter-ease](#enterease) and [data-vn-leave-ease](leaveease).
+
+<p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
 
 
 ### 2. Through function invocation.
@@ -148,9 +152,9 @@ const animateOut = (el, done) => {
 
 > **Important**: Always pass the done as a second argument, needed to tell Vue to remove the element out the DOM when animation is finished.
 
-<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
+<p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
 
-#### Setting Options <a id="setting-options-function"></a>
+<h4 id="setting-options-function">Setting Options</h4>
 When using function invocation, you can pass options as a configuration object to the third parameter of the animation:
 ```javascript
 const animateIn = (el, done) => {
@@ -164,7 +168,7 @@ const animateIn = (el, done) => {
 ```
 > Function invocation also support setting options through dataset attributes in template.
 
-<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
+<p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
 
 ### Animate Multiple Elements
 You may use the `<TransitionGroup>` for animating multiple elements as they enter and leave the DOM:
@@ -187,7 +191,7 @@ const animationEnded = (el) => {
   <Transition @enter="vanishIn" @after-enter="animationEnded"></Transition>
 </template>
 ```
-<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
+<p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
 
 ### Asynchronous Support <a id="asynchronous-support-anim"></a>
 All animations return a Promise that resolves when the animation completes, allowing you to handle asynchronous operations using `await` or by chaining `.then()` and `.catch()`:
@@ -202,7 +206,7 @@ zoomIn(el, done).then(() => console.log('Success'))
 .catch((error) => console.log(error))
 ```
 <small>[See all animations](#animations)</small>
-<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
+<p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
 
 
 
@@ -223,7 +227,7 @@ zoomIn(el, done).then(() => console.log('Success'))
 | [data-av-enter-ease](#data-av-enter-ease)   | `"ease"`  | `string` | `data-av-enter-ease="bounceIn"` |
 | [data-av-leave-ease](#data-av-leave-ease)  | `"ease"` | `string` | `data-av-leave-ease="elasticIn"` |
 
-<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
+<p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
 
 ### Details
 
@@ -344,7 +348,7 @@ const animateIn = (el, done) => {
 ```
 
 👆 In this example, only the data-av-delay option from dataset attributes will be applied, as the duration and ease options are specified in the function invocation.
-<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
+<p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
 
 
 ## Animations
@@ -397,7 +401,7 @@ const animateIn = (el, done) => {
 <small>More coming...</small>
 
 [View live demo of animations](https://animate4vue.netlify.app)
-<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
+<p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
 
 
 ## Attention Seekers
@@ -430,7 +434,7 @@ const ringBell = () => {
 
 ![demo1](https://github.com/artisticLogicMK/animate4vue/blob/master/md_assets/demo1.gif)
 
-### Setting Options <a id="setting-options-att"></a>
+### <h4 id="setting-options-att">Setting Options</h4>
 You can pass options to customize the animation behavior. For example:
 ```javascript
 headShake(el, {
@@ -468,7 +472,7 @@ headShake(el, {
 
 > Delay before the animation in seconds. Numbers below 0 denotes milliseconds(e.g 0.3). Also specify repeat delay of the animation when is on loop.
 
-<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
+<p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
 
 ### Stopping Attention Seekers
 Attention seekers provide a `kill()` method to stop ongoing animations, especially when set to loop. This allows you to halt the animation at any time.
@@ -511,7 +515,7 @@ onMounted(() => {
 
 > **Tip**: Attention seeker animations also work with Transition component events. For example `@enter="jello"`.
 
-<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
+<p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
 
 <br>
 
@@ -542,7 +546,7 @@ const animateIn = (el, done) => {
   </Transition>
 </template>
 ```
-<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
+<p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
 
 ### API
 ```customAnimation(element, done, direction, config)```
@@ -562,7 +566,7 @@ const animateIn = (el, done) => {
 
 > Keep in mind that the animation properties defined for 'enter' dictate how the element appears when it enters, while those specified for 'leave' determine how it disappears.
 
-<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
+<p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
 
 ### Asynchronous Support <a id="asynchronous-support-custom"></a>
 The `customAnimation()` method returns a Promise that resolves when the animation is complete, allowing you to use `await` or chain `.then()` and `.catch()` for asynchronous operations:
@@ -580,7 +584,7 @@ customAnimation(el, done, "leave", {
 }).then(() => console.log('Animation Complete'))
 .catch((error) => console.log('Animation Error:', error));
 ```
-<p align="right"><small><a href="#table-of-contents">Table of Contents</a></small></p>
+<p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
 
 
 ## Feedback
