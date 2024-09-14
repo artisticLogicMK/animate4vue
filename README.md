@@ -120,6 +120,12 @@ Through 'direct invocation,' you can specify animation options by setting datase
 ```
 ![demo4](https://github.com/artisticLogicMK/animate4vue/blob/master/md_assets/demo4.gif)
 `data-av-[option property]="..."`
+> The datasets attributes can be applied directly to the `<Transition>` tag or the element inside it, giving you more flexibility:
+
+`✅ <Transition data-v-ease="backIn">`
+
+`✅ <div v-if="show" data-av-ease="elastic">`
+
 > Options using dataset attributes apply to both @enter and @leave animations except [data-vn-enter-ease](#enterease) and [data-vn-leave-ease](leaveease).
 
 <p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
