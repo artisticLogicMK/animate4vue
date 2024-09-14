@@ -122,11 +122,11 @@ Through 'direct invocation,' you can specify animation options by setting datase
 `data-av-[option property]="..."`
 > The datasets attributes can be applied directly to the `<Transition>` tag or the element inside it, giving you more flexibility:
 
-`✅ <Transition data-v-ease="backIn">`
+`✅ <Transition ... data-av-ease="backIn">`
 
 `✅ <div v-if="show" data-av-ease="elastic">`
 
-> Options using dataset attributes apply to both @enter and @leave animations except [data-vn-enter-ease](#enterease) and [data-vn-leave-ease](leaveease).
+> Options using dataset attributes apply to both @enter and @leave animations except [data-av-enter-ease](#enterease) and [data-av-leave-ease](leaveease).
 
 <p align="right"><small><a href="#table-of-contents"><u>&uarr; Table of Contents</u></a></small></p>
 
@@ -414,8 +414,7 @@ const animateIn = (el, done) => {
 Attention seekers are animations designed to grab users' attention, such as a ringing bell icon or shaking elements. These animations enhance user engagement and provide a compelling experience. Animate4vue offers a variety of dynamic attention-seeking animations to fit any scenario.
 
 ### Available Attention-Seeker Animations <a id="att-animations"></a>
-`puff`, `jello`, `spin`, `bounce`, `pulse`, `flash`, `rubberBand`, `headShake`, `shakeHorizontal`, `shakeVertical`, `swing`, `tada`, `wobble`, `heartBeat`
-<small>More coming...</small>
+`puff`, `jello`, `spin`, `bounce`, `pulse`, `flash`, `rubberBand`, `headShake`, `shakeHorizontal`, `shakeVertical`, `swing`, `tada`, `wobble`, `heartBeat`. <small>More coming...</small>
 
 ### How To Use:
 ```html
