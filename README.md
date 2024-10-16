@@ -95,6 +95,8 @@ import { puffIn, puffOut } from 'animate4vue';
 ```
 ![demo3](https://github.com/artisticLogicMK/animate4vue/blob/master/md_assets/demo3.gif)
 
+> **Important**: When using Vue with TypeScript, it's recommended to use the [**Function Invocation**](#2-through-function-invocation) method for handling animations. This is due to type incompatibilities when directly hooking animations onto the `<Transition>` component.
+
 > **Important**: Elements should be conditionally displayed using v-if for animations to work.
 
 > **Tip**: Make sure there are no animations or CSS transitions applied or conflicting with elements to animate, they might interfere and mess things up. For example, avoid specifying CSS transitions globally.
@@ -132,7 +134,7 @@ Through 'direct invocation,' you can specify animation options by setting datase
 
 
 ### 2. Through function invocation.
-This method involves handling animations within the `<script>`, offering greater control, such as adding fallbacks and handling `async` operations.
+This method involves handling animations within the `<script>`, offering greater control, such as adding fallbacks and handling `async` operations. When working with Vue and TypeScript, this approach is recommended to avoid type errors that can occur when directly applying animations to the `<Transition>` component.
 ```html
 <script setup>
 import { zoomIn, zoomOut } from 'animate4vue';
